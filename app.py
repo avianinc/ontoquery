@@ -26,6 +26,9 @@ if not os.path.exists(QUERY_FOLDER):
 # ------------------- Sidebar Ontology Upload and File Management -----------------------
 st.sidebar.title("Ontology Management")
 
+# Checkbox to clear existing dataset before uploading
+clear_existing_data = st.sidebar.checkbox("Clear existing dataset before uploading", value=True)
+
 # Ontology upload section
 uploaded_file = st.sidebar.file_uploader("Upload an ontology file", type=["ttl", "rdf", "owl"])
 if uploaded_file and st.sidebar.button("Upload Ontology"):
@@ -38,6 +41,25 @@ if uploaded_file and st.sidebar.button("Upload Ontology"):
         f.write(uploaded_file.getbuffer())
     st.sidebar.success(f"Ontology {uploaded_file.name} saved locally.")
 
+    # Clear existing Fuseki data if checkbox is selected
+    if clear_existing_data:
+        st.sidebar.info("Clearing existing Fuseki dataset...")
+        delete_query = """
+        DELETE WHERE {
+            ?s ?p ?o
+        }
+        """
+        delete_response = requests.post(
+            FUSEKI_UPDATE_ENDPOINT,
+            headers={"Content-Type": "application/sparql-update"},
+            data=delete_query,
+            auth=HTTPBasicAuth("admin", "adminpassword")  # Replace with correct credentials
+        )
+        if delete_response.status_code == 200:
+            st.sidebar.success("Existing dataset cleared successfully.")
+        else:
+            st.sidebar.error(f"Failed to clear dataset: {delete_response.status_code} - {delete_response.text}")
+    
     # Upload ontology to Fuseki
     upload_response = requests.post(
         FUSEKI_DATA_ENDPOINT,

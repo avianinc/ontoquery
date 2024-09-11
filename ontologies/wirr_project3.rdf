@@ -867,6 +867,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"/>
+        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</untitled-ontology-47:mass>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA">
@@ -881,6 +890,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1">
         <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload"/>
         <untitled-ontology-47:contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot_Y"/>
+        <untitled-ontology-47:contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB"/>
         <untitled-ontology-47:contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA"/>
         <untitled-ontology-47:contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot_X"/>
     </owl:NamedIndividual>
