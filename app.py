@@ -153,5 +153,5 @@ if selected_query and selected_query != "" and st.button("Delete Query"):
 
 # ------------------- Tools and Links Section -----------------------
 with st.sidebar.expander("Tools and Links"):
-    st.markdown(f"[Widoco Documentation](http://localhost:8080/index-en.html)", unsafe_allow_html=True)
+    st.markdown(f"[Ontology Docs](http://localhost:8080/index-en.html)", unsafe_allow_html=True)
     st.markdown(f"[Fuseki Server](http://localhost:3030)", unsafe_allow_html=True)
