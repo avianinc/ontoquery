@@ -1,0 +1,587 @@
+[ {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Attack",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Call",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Classify",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Climb",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Command",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Condition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CounterMeasure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mean" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "200"
+  } ],
+  "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#variance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "50"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Cruise",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Decend",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Drop",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Fire",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Identify",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPI",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPP",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Land",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Loiter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOE",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOP",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Measure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Miscellaneaous",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Notify",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PassiveSensor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor"
+  }, {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"
+  } ],
+  "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "200"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Ship",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Specification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Warmup",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Waypoint",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#acceleration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#address",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#altitude",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#degrees_of_freedom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#density",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#designedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#durationTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#emailAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#endTIme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#engineeringAthourity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#firstName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPackage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPayload",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasQuantity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Captures the actual measurement value for the Measure (e.g., 500 km/h for speed)."
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#heading",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#height",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isMeasuredBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Links Metric to Measure."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#lastName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#length",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"
+  }, {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload"
+  }, {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform"
+  }, {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor"
+  }, {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximum",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumAltitude",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumSpeed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mean",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#minimum",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#performs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#phoneNumber",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#range",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#rate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#requires",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#scale_parameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#shape_parameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#speed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#startTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#variance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#width",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#float"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox"
+  } ]
+} ]

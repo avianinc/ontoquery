@@ -26,4 +26,5 @@ services:
     restart: always
 
 
-
+# This builds the ontology file
+# sudo docker run -ti --rm -v `pwd`/data/ontologies:/usr/local/widoco/in:Z -v `pwd`/target/generated-doc:/usr/local/widoco/out:Z ghcr.io/dgarijo/widoco:v1.4.23 -ontFile in/wirr_project3.rdf -outFolder out -rewriteAll
