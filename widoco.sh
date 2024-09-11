@@ -9,7 +9,7 @@
 sudo docker run -ti --rm \
     -v `pwd`/data/ontologies:/usr/local/widoco/in:Z \
     -v `pwd`/data/target/generated-doc:/usr/local/widoco/out:Z \
-    ghcr.io/dgarijo/widoco:v1.4.23 \
+    ghcr.io/dgarijo/widoco:v1.4.25 \
     -ontFile in/wirr_project3.rdf \
     -outFolder out \
     -rewriteAll \
