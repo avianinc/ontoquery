@@ -11,6 +11,8 @@ st.set_page_config(layout="wide")
 FUSEKI_UPDATE_ENDPOINT = "http://fuseki:3030/ds/update"
 FUSEKI_DATA_ENDPOINT = "http://fuseki:3030/ds/data"
 FUSEKI_QUERY_ENDPOINT = "http://fuseki:3030/ds/sparql"
+FUSEKI_SERVER_URL = "http://localhost:3030"
+WIDOCO_DOC_URL = "http://localhost:8080/index-en.html"
 
 # Directory to store ontology files
 ONTOLOGY_FOLDER = "data/ontologies"
@@ -148,3 +150,8 @@ if selected_query and selected_query != "" and st.button("Delete Query"):
     os.remove(os.path.join(QUERY_FOLDER, selected_query))
     st.success(f"Deleted {selected_query}")
     st.rerun()
+
+# ------------------- Tools and Links Section -----------------------
+with st.sidebar.expander("Tools and Links"):
+    st.markdown(f"[Widoco Documentation](http://localhost:8080/index-en.html)", unsafe_allow_html=True)
+    st.markdown(f"[Fuseki Server](http://localhost:3030)", unsafe_allow_html=True)
