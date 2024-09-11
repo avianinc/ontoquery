@@ -1,0 +1,12 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#>
+
+SELECT ?airVehicle (SUM(?objectMass) + ?airVehicleMass AS ?totalMass)
+WHERE {
+  ?airVehicle rdf:type ex:AirVehicle .
+  ?airVehicle ex:mass ?airVehicleMass .
+  ?airVehicle ex:hasPayload ?payload .
+  ?payload ex:contains ?object .
+  ?object ex:mass ?objectMass .
+}
+GROUP BY ?airVehicle ?airVehicleMass

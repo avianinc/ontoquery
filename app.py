@@ -76,10 +76,14 @@ if selected_query and selected_query != "":
     with open(os.path.join(QUERY_FOLDER, selected_query), "r") as file:
         query = file.read()
 
-# Text area to edit or write a new query
-text_length = len(query.split('\n'))  # Number of lines
-height = min(500, max(100, text_length * 20))  # Adjust height based on lines
-query = st.text_area("SPARQL Query", value=query)
+# Calculate text area height dynamically based on the query content
+if query:
+    text_length = len(query.split('\n'))  # Number of lines in the query
+    height = min(500, max(100, text_length * 20)) + 50  # Dynamic height, capped at 500px
+else:
+    height = 100  # Default height if no query is loaded
+
+query = st.text_area("SPARQL Query", value=query, height=height)
 
 # Execute the Query
 if st.button("Run Query"):

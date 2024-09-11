@@ -1,0 +1,9 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#>
+
+# Query to retrieve the mass of the AirVehicle instance
+SELECT ?airVehicle ?mass
+WHERE {
+  ?airVehicle rdf:type ex:AirVehicle .     # Find the AirVehicle instance
+  ?airVehicle ex:mass ?mass .              # Retrieve the mass property
+}
