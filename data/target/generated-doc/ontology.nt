@@ -230,9 +230,9 @@
 # http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222
-<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor> .
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor> .
 # 
 # http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -433,6 +433,7 @@
 # 
 # http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a weapon :)" .
 # 
 # 
 # 

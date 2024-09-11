@@ -270,8 +270,8 @@
 :Action rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222
-:ActiveSensor222 rdf:type owl:Class ;
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ
+:ActiveSensorXYZ rdf:type owl:Class ;
                  rdfs:subClassOf :Sensor .
 
 
@@ -525,7 +525,8 @@
 
 
 ###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon
-:Weapon rdf:type owl:Class .
+:Weapon rdf:type owl:Class ;
+        rdfs:comment "This is a weapon :)" .
 
 
 #################################################################

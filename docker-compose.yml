@@ -33,6 +33,26 @@ services:
       - ./data/target/generated-doc:/usr/share/nginx/html:ro
     restart: always
 
+  wpmongo:
+    container_name: webprotege-mongodb
+    image: mongo:4.1-bionic
+    restart: unless-stopped
+    volumes: 
+      - ./.protegedata/mongodb:/data/db
+
+  webprotege:
+    container_name: webprotege
+    image: protegeproject/webprotege
+    depends_on:
+      - wpmongo
+    restart: unless-stopped
+    environment:
+      - webprotege.mongodb.host=wpmongo
+    volumes: 
+    - ./.protegedata/protege:/srv/webprotege
+    ports:
+      - 5000:8080
+
 
 # if fuseki cant write
 #mkdir -p fuseki_data

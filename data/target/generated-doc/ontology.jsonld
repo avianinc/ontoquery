@@ -31,7 +31,7 @@
   "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
-  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222",
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor"
@@ -440,7 +440,10 @@
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "This is a weapon :)"
+  } ]
 }, {
   "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#acceleration",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],

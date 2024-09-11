@@ -475,10 +475,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222 -->
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222">
+    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor"/>
     </owl:Class>
     
@@ -932,7 +932,9 @@
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon -->
 
 
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon">
+        <rdfs:comment>This is a weapon :)</rdfs:comment>
+    </owl:Class>
     
 
 

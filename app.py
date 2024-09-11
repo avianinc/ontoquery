@@ -110,7 +110,7 @@ else:
 query = st.text_area("SPARQL Query", value=query, height=height)
 
 # Execute the Query
-if st.button("Run Query"):
+if st.button("Run Query", key="run_query", type="primary"):
     response = requests.post(
         FUSEKI_QUERY_ENDPOINT,
         data=query,
