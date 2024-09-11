@@ -1,0 +1,13 @@
+FROM stain/jena-fuseki
+
+# Switch to root to modify permissions
+USER root
+
+# Ensure that /fuseki is writable by the fuseki user
+RUN mkdir -p /fuseki && chown -R fuseki:fuseki /fuseki
+
+# Set the FUSEKI_BASE environment variable
+ENV FUSEKI_BASE /fuseki
+
+# Switch back to the fuseki user
+USER fuseki

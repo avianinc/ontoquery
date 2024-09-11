@@ -1,0 +1,9 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ex: <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#>
+
+# Query to retrieve all data properties in the ontology
+SELECT ?property
+WHERE { 
+  ?property rdf:type owl:DatatypeProperty .
+}

@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  fuseki:
+    build:
+      context: .
+      dockerfile: Dockerfile.fuseki
+    container_name: fuseki
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./fuseki_data:/fuseki
+    environment:
+      - ADMIN_PASSWORD=adminpassword
+    restart: always
+
+
+  streamlit:
+    build: .
+    container_name: streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./:/app  # Mount your local code to the container
+    depends_on:
+      - fuseki
+    restart: always
+
+
+

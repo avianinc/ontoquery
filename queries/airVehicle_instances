@@ -1,0 +1,8 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#>
+
+# Query to retrieve all instances of AirVehicle
+SELECT ?airVehicle
+WHERE { 
+  ?airVehicle rdf:type ex:AirVehicle .
+}
