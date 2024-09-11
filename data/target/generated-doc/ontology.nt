@@ -459,6 +459,7 @@
 # http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost> "1500"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 # 
 # http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution
@@ -479,22 +480,22 @@
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> .
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 # 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "280"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
 # http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile> .
-<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
-# 
-# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA
-<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile> .
-<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "280"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "666"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 # 
 # http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload> .
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA> .
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> .
-<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA> .
 <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot> .
 # 
 # http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot

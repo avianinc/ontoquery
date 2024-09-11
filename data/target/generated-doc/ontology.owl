@@ -977,6 +977,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot">
         <isDefinedBy rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"/>
+        <cost rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1500</cost>
         <mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</mass>
     </owl:NamedIndividual>
     
@@ -1015,22 +1016,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA -->
+
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"/>
+        <mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">280</mass>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB -->
 
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB">
         <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"/>
-        <mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA -->
-
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"/>
-        <mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">280</mass>
+        <mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">666</mass>
     </owl:NamedIndividual>
     
 
@@ -1041,8 +1042,8 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1">
         <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload"/>
         <contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot"/>
+        <contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA"/>
         <contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB"/>
-        <contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA"/>
         <contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot"/>
     </owl:NamedIndividual>
     

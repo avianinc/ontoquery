@@ -550,6 +550,7 @@
 ###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot
 :CoPilot rdf:type owl:NamedIndividual ;
          :isDefinedBy :CrewMass_NormalDistrbution ;
+         :cost 1500 ;
          :mass 200 .
 
 
@@ -574,24 +575,24 @@
                   :mass 200 .
 
 
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA
+:MissileA rdf:type owl:NamedIndividual ,
+                   :Missile ;
+          :mass 280 .
+
+
 ###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB
 :MissileB rdf:type owl:NamedIndividual ,
                    :Missile ;
-          :mass 0 .
-
-
-###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA
-:MissleA rdf:type owl:NamedIndividual ,
-                  :Missile ;
-         :mass 280 .
+          :mass 666 .
 
 
 ###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1
 :Payload1 rdf:type owl:NamedIndividual ,
                    :Payload ;
           :contains :CoPilot ,
+                    :MissileA ,
                     :MissileB ,
-                    :MissleA ,
                     :Pilot .
 
 

@@ -75,6 +75,10 @@
 }, {
   "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "1500"
+  } ],
   "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy" : [ {
     "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"
   } ],
@@ -246,11 +250,21 @@
     "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"
   } ]
 }, {
+  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "280"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"
+  } ]
+}, {
   "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "0"
+    "@value" : "666"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"
@@ -263,16 +277,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model"
-  } ]
-}, {
-  "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
-    "@value" : "280"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"
   } ]
 }, {
   "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model",
@@ -312,9 +316,9 @@
   "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains" : [ {
     "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot"
   }, {
-    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB"
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA"
   }, {
-    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA"
+    "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB"
   }, {
     "@id" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot"
   } ],
