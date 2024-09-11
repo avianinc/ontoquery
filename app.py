@@ -13,8 +13,8 @@ FUSEKI_DATA_ENDPOINT = "http://fuseki:3030/ds/data"
 FUSEKI_QUERY_ENDPOINT = "http://fuseki:3030/ds/sparql"
 
 # Directory to store ontology files
-ONTOLOGY_FOLDER = "ontologies"
-QUERY_FOLDER = "queries"
+ONTOLOGY_FOLDER = "data/ontologies"
+QUERY_FOLDER = "data/queries"
 
 # Ensure the ontology and query folders exist
 if not os.path.exists(ONTOLOGY_FOLDER):

@@ -1,0 +1,2033 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47", "http://www.w3.org/2001/XMLSchema" ],
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "40",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "44",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "27",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "58",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "7",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "2",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "62",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "71",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "76",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "77",
+    "type" : "owl:Class"
+  }, {
+    "id" : "79",
+    "type" : "owl:Class"
+  }, {
+    "id" : "81",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "88",
+    "type" : "owl:Class"
+  }, {
+    "id" : "87",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "owl:Class"
+  }, {
+    "id" : "106",
+    "type" : "owl:Class"
+  }, {
+    "id" : "107",
+    "type" : "owl:Class"
+  }, {
+    "id" : "75",
+    "type" : "owl:Class"
+  }, {
+    "id" : "110",
+    "type" : "owl:Class"
+  }, {
+    "id" : "113",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "114",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "115",
+    "type" : "owl:Class"
+  }, {
+    "id" : "118",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "121",
+    "type" : "owl:Class"
+  }, {
+    "id" : "123",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "104",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "105",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "74",
+    "type" : "owl:Class"
+  }, {
+    "id" : "92",
+    "type" : "owl:Class"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "119",
+    "type" : "owl:Class"
+  }, {
+    "id" : "135",
+    "type" : "owl:Class"
+  }, {
+    "id" : "120",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "143",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "116",
+    "type" : "owl:Class"
+  }, {
+    "id" : "152",
+    "type" : "owl:Class"
+  }, {
+    "id" : "145",
+    "type" : "owl:Class"
+  }, {
+    "id" : "125",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "60",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "122",
+    "type" : "owl:Class"
+  }, {
+    "id" : "68",
+    "type" : "owl:Class"
+  }, {
+    "id" : "85",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "147",
+    "type" : "owl:Class"
+  }, {
+    "id" : "109",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "163",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "165",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "132",
+    "type" : "owl:Class"
+  }, {
+    "id" : "127",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "112",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "154",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "3",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "141",
+    "type" : "owl:Class"
+  }, {
+    "id" : "139",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "86",
+    "type" : "owl:Class"
+  }, {
+    "id" : "174",
+    "type" : "owl:Class"
+  }, {
+    "id" : "78",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "175",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "0",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SustaimmentModel",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SustaimmentModel"
+    },
+    "id" : "4",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Mission"
+    },
+    "id" : "10"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Sensor"
+    },
+    "subClasses" : [ "12", "13" ],
+    "attributes" : [ "equivalent" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Call",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Call"
+    },
+    "id" : "16",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "21",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "22",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Classify",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Classify"
+    },
+    "id" : "23",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPI",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "KPI"
+    },
+    "id" : "24",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "37",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "40",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "41",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "42",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "43",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPP",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "KPP"
+    },
+    "id" : "44",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "45",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "46",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "48",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PassiveSensor",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PassiveSensor"
+    },
+    "id" : "12",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Waypoint",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Waypoint"
+    },
+    "id" : "49",
+    "superClasses" : [ "50" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Loiter",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Loiter"
+    },
+    "id" : "51",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "15",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "56",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "27",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "57",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "58",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "7",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "59",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "2",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "62",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#StartTime",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "StartTime"
+    },
+    "id" : "71",
+    "superClasses" : [ "72" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Metric"
+    },
+    "subClasses" : [ "74", "75", "24", "44" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Miscellaneaous",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Miscellaneaous"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Bomb",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Bomb"
+    },
+    "id" : "77",
+    "superClasses" : [ "78" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PerformanceModel",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PerformanceModel"
+    },
+    "id" : "79",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload",
+    "equivalent" : [ "60", "11", "76", "78" ],
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Payload"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "Payload1"
+      }
+    } ],
+    "attributes" : [ "equivalent" ],
+    "id" : "81"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Cruise",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Cruise"
+    },
+    "id" : "83",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Time"
+    },
+    "subClasses" : [ "86", "71", "87" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Launch",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Launch"
+    },
+    "id" : "88",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#DurationTime",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DurationTime"
+    },
+    "id" : "87",
+    "superClasses" : [ "72" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Command",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Command"
+    },
+    "id" : "64",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Missile"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "MissileB"
+      }
+    }, {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "MissleA"
+      }
+    } ],
+    "id" : "106",
+    "superClasses" : [ "78" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CounterMeasure",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CounterMeasure"
+    },
+    "id" : "107"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOE",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MOE"
+    },
+    "id" : "75",
+    "superClasses" : [ "25" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "39", "81", "60", "11", "78" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "110"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "113",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Attack",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Attack"
+    },
+    "id" : "114",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Vendor"
+    },
+    "id" : "19"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "55",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "instances" : 0,
+    "union" : [ "116", "10" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "115"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "118",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Action"
+    },
+    "subClasses" : [ "92", "64", "68", "66", "16", "51", "119", "23", "83", "120", "88", "114", "121", "122" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Identify",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Identify"
+    },
+    "id" : "121",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "123",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "104",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "53",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "105",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOP",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MOP"
+    },
+    "id" : "74",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Drop",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Drop"
+    },
+    "id" : "92",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Decend",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Decend"
+    },
+    "id" : "66",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Warmup",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Warmup"
+    },
+    "id" : "119",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Condition",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Condition"
+    },
+    "id" : "135"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Notify",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Notify"
+    },
+    "id" : "120",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActiveSensor222"
+    },
+    "id" : "13",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target",
+    "equivalent" : [ "39", "11", "78" ],
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Target"
+    },
+    "subClasses" : [ "49" ],
+    "attributes" : [ "equivalent" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Function"
+    },
+    "subClasses" : [ "61" ],
+    "id" : "143"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ProbilityDensityFunction"
+    },
+    "subClasses" : [ "141" ],
+    "id" : "61",
+    "superClasses" : [ "143" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Package",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Package"
+    },
+    "id" : "116"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Requirement",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Requirement"
+    },
+    "id" : "152"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AirVehicle"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "AV1"
+      }
+    }, {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "AV2"
+      }
+    } ],
+    "id" : "145",
+    "superClasses" : [ "39" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gun",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Gun"
+    },
+    "id" : "125",
+    "superClasses" : [ "78" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Platform"
+    },
+    "subClasses" : [ "147", "145" ],
+    "attributes" : [ "equivalent" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CrewMember"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "Gunner"
+      }
+    }, {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "SensorOperator"
+      }
+    }, {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "Pilot"
+      }
+    }, {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "Swimmer"
+      }
+    }, {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "MedicalAttendant"
+      }
+    } ],
+    "attributes" : [ "equivalent" ],
+    "id" : "60"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Land",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Land"
+    },
+    "id" : "122",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Climb",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Climb"
+    },
+    "id" : "68",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "85",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Ship",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Ship"
+    },
+    "id" : "147",
+    "superClasses" : [ "39" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "109",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "163",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "70",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "165",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ReliabilityModel",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ReliabilityModel"
+    },
+    "id" : "132",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "127",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "112",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "154",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#float",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "3",
+    "label" : {
+      "IRI-based" : "float"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "20",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NormalDistribution"
+    },
+    "individuals" : [ {
+      "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution",
+      "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+      "labels" : {
+        "IRI-based" : "CrewMass_NormalDistrbution"
+      }
+    } ],
+    "id" : "141",
+    "superClasses" : [ "61" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissionModel",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MissionModel"
+    },
+    "id" : "139",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Model"
+    },
+    "subClasses" : [ "139", "4", "132", "79" ],
+    "id" : "5"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#EndTIme",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EndTIme"
+    },
+    "id" : "86",
+    "superClasses" : [ "72" ]
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Measure",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Measure"
+    },
+    "id" : "174"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Weapon"
+    },
+    "subClasses" : [ "125", "77", "106" ],
+    "attributes" : [ "equivalent" ],
+    "id" : "78"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Specification",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Specification"
+    },
+    "id" : "175"
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "52",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "65",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "73",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "80",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "82",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "84",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "89",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "91",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "93",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "94",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "96",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "97",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "98",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "99",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "100",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "101",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "102",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "103",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "108",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "111",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "117",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "124",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "126",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "128",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "129",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "130",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "131",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "133",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "134",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "136",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "137",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "138",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "140",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "142",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "144",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "146",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "148",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "149",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "150",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "151",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "153",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "155",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "156",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "157",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "158",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "159",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "160",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "161",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "162",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "164",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "166",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "167",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "168",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "169",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "170",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "171",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "172",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "173",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#acceleration",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "acceleration"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#firstName",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "firstName"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#location",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "location"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#phoneNumber",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "phoneNumber"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#address",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "address"
+    },
+    "domain" : "19",
+    "attributes" : [ "datatype" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "topObjectProperty"
+    },
+    "domain" : "27",
+    "subproperty" : [ "28", "29", "30", "31", "32", "33", "34", "35", "36" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPayload",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "hasPayload"
+    },
+    "domain" : "39",
+    "attributes" : [ "object" ],
+    "id" : "38"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#shape_parameter",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "42",
+    "label" : {
+      "IRI-based" : "shape_parameter"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumSpeed",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "53",
+    "label" : {
+      "IRI-based" : "maximumSpeed"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "52"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "personnelProperties"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "isDefinedBy"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "60",
+    "attributes" : [ "object" ],
+    "id" : "36"
+  }, {
+    "range" : "17",
+    "domain" : "64",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "63"
+  }, {
+    "range" : "17",
+    "domain" : "66",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "65"
+  }, {
+    "range" : "17",
+    "domain" : "68",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#engineeringAthourity",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "70",
+    "label" : {
+      "IRI-based" : "engineeringAthourity"
+    },
+    "domain" : "19",
+    "attributes" : [ "datatype" ],
+    "id" : "69"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#rate",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "58",
+    "label" : {
+      "IRI-based" : "rate"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "73"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#speed",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "59",
+    "label" : {
+      "IRI-based" : "speed"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "80"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasValue",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasValue"
+    },
+    "domain" : "27",
+    "comment" : {
+      "undefined" : "Captures the actual measurement value for the Measure (e.g., 500 km/h for speed)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "82"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#altitude",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "85",
+    "label" : {
+      "IRI-based" : "altitude"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "84"
+  }, {
+    "range" : "72",
+    "domain" : "71",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "89"
+  }, {
+    "range" : "72",
+    "domain" : "86",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "90"
+  }, {
+    "range" : "17",
+    "domain" : "92",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "91"
+  }, {
+    "range" : "72",
+    "domain" : "87",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "93"
+  }, {
+    "range" : "25",
+    "domain" : "75",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "94"
+  }, {
+    "range" : "25",
+    "domain" : "74",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "95"
+  }, {
+    "range" : "25",
+    "domain" : "44",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "96"
+  }, {
+    "range" : "25",
+    "domain" : "24",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "97"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#scale_parameter",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "scale_parameter"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "98"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#emailAddress",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "emailAddress"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "99"
+  }, {
+    "range" : "11",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "100"
+  }, {
+    "range" : "11",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "101"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mean",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "mean"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "102"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#degrees_of_freedom",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "104",
+    "label" : {
+      "IRI-based" : "degrees_of_freedom"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "103"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasQuantity",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "105",
+    "label" : {
+      "IRI-based" : "hasQuantity"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "60",
+    "attributes" : [ "object" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "109",
+    "label" : {
+      "IRI-based" : "cost"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "108"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#length",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "112",
+    "label" : {
+      "IRI-based" : "length"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "111"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#performs",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "performs"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumAltitude",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "113",
+    "label" : {
+      "IRI-based" : "maximumAltitude"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "117"
+  }, {
+    "range" : "78",
+    "domain" : "125",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "124"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#height",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "127",
+    "label" : {
+      "IRI-based" : "height"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "126"
+  }, {
+    "range" : "5",
+    "domain" : "79",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "128"
+  }, {
+    "range" : "78",
+    "domain" : "106",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "129"
+  }, {
+    "range" : "78",
+    "domain" : "77",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "130"
+  }, {
+    "range" : "5",
+    "domain" : "132",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "131"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#variance",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "57",
+    "label" : {
+      "IRI-based" : "variance"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "133"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasAirVehicle"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "115",
+    "attributes" : [ "object" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isMeasuredBy",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "isMeasuredBy"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "27",
+    "comment" : {
+      "undefined" : "Links Metric to Measure."
+    },
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "45",
+    "label" : {
+      "IRI-based" : "airvehicleProperties"
+    },
+    "domain" : "27",
+    "attributes" : [ "datatype" ],
+    "id" : "134"
+  }, {
+    "range" : "5",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "136"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "physicalProperties"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "137"
+  }, {
+    "range" : "5",
+    "domain" : "139",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "138"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "contains"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "35"
+  }, {
+    "range" : "61",
+    "domain" : "141",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "140"
+  }, {
+    "range" : "143",
+    "domain" : "61",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "142"
+  }, {
+    "range" : "39",
+    "domain" : "145",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "144"
+  }, {
+    "range" : "39",
+    "domain" : "147",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "146"
+  }, {
+    "range" : "17",
+    "domain" : "121",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "148"
+  }, {
+    "range" : "17",
+    "domain" : "114",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "149"
+  }, {
+    "range" : "50",
+    "domain" : "49",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "150"
+  }, {
+    "range" : "17",
+    "domain" : "122",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "151"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "154",
+    "label" : {
+      "IRI-based" : "mass"
+    },
+    "domain" : "110",
+    "attributes" : [ "datatype" ],
+    "id" : "153"
+  }, {
+    "range" : "17",
+    "domain" : "120",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "155"
+  }, {
+    "range" : "17",
+    "domain" : "83",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "156"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#range",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "118",
+    "label" : {
+      "IRI-based" : "range"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "157"
+  }, {
+    "range" : "17",
+    "domain" : "88",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "158"
+  }, {
+    "range" : "17",
+    "domain" : "51",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "159"
+  }, {
+    "range" : "17",
+    "domain" : "16",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "160"
+  }, {
+    "range" : "17",
+    "domain" : "23",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "161"
+  }, {
+    "range" : "17",
+    "domain" : "119",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "162"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDesignedBy",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "isDesignedBy"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "functionProperties"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "164"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#requires",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "requires"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#minimum",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "43",
+    "label" : {
+      "IRI-based" : "minimum"
+    },
+    "domain" : "27",
+    "attributes" : [ "datatype" ],
+    "id" : "166"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#lastName",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "lastName"
+    },
+    "domain" : "27",
+    "attributes" : [ "datatype" ],
+    "id" : "167"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPackage",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasPackage"
+    },
+    "superproperty" : [ "26" ],
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "37",
+    "label" : {
+      "IRI-based" : "boundingBox"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "168"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#width",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "62",
+    "label" : {
+      "IRI-based" : "width"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "169"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "vendorProperties"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "170"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximum",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "123",
+    "label" : {
+      "IRI-based" : "maximum"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "171"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#heading",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "165",
+    "label" : {
+      "IRI-based" : "heading"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "172"
+  }, {
+    "iri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#density",
+    "baseIri" : "http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47",
+    "range" : "163",
+    "label" : {
+      "IRI-based" : "density"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "173"
+  } ]
+}

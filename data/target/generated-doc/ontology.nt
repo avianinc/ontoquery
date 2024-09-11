@@ -1,0 +1,517 @@
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Package> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPackage
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPackage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPackage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPackage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPayload
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPayload> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPayload> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasQuantity
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasQuantity> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasQuantity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasValue
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Captures the actual measurement value for the Measure (e.g., 500 km/h for speed)." .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDesignedBy
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDesignedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDesignedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isMeasuredBy
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isMeasuredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isMeasuredBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isMeasuredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links Metric to Measure." .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#performs
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#performs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#performs> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#requires
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#requires> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#requires> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#acceleration
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#acceleration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#acceleration> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#acceleration> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#address
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#address> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#address> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#address> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#address> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#altitude
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#altitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#altitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#altitude> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#degrees_of_freedom
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#degrees_of_freedom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#degrees_of_freedom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#density
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#density> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#density> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#density> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#emailAddress
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#emailAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#emailAddress> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#engineeringAthourity
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#engineeringAthourity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#engineeringAthourity> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#engineeringAthourity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#engineeringAthourity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#firstName
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#firstName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#firstName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#heading
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#heading> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#heading> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#heading> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#height
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#height> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#height> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#height> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#lastName
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#lastName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#lastName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#length
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#length> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#length> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#length> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#location
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#location> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximum
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximum> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumAltitude
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumAltitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumAltitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumSpeed
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumSpeed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumSpeed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mean
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mean> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mean> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#minimum
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#minimum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#minimum> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#phoneNumber
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#phoneNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#phoneNumber> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#range
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#range> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#rate
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#rate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#rate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#scale_parameter
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#scale_parameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#scale_parameter> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#shape_parameter
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#shape_parameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#shape_parameter> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#speed
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#speed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#speed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#speed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#variance
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#variance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#variance> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#width
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#width> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#width> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#width> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Attack
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Attack> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Attack> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Bomb
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Bomb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Bomb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Call
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Call> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Call> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Classify
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Classify> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Classify> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Climb
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Climb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Climb> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Command
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Command> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Command> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Condition
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Condition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CounterMeasure
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CounterMeasure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Cruise
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Cruise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Cruise> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Decend
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Decend> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Decend> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Drop
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Drop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Drop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#DurationTime
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#DurationTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#DurationTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#EndTIme
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#EndTIme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#EndTIme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gun
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gun> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gun> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Identify
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Identify> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Identify> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPI
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPP
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Land
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Land> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Land> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Launch
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Launch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Launch> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Loiter
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Loiter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Loiter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOE
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOE> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOP
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Measure
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Measure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Miscellaneaous
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Miscellaneaous> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Miscellaneaous> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissionModel
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissionModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissionModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Notify
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Notify> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Notify> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Package
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Package> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PassiveSensor
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PassiveSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PassiveSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PerformanceModel
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PerformanceModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PerformanceModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ReliabilityModel
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ReliabilityModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ReliabilityModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Requirement
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Requirement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Ship
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Ship> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Ship> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Specification
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Specification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#StartTime
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#StartTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#StartTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SustaimmentModel
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SustaimmentModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SustaimmentModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Warmup
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Warmup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Warmup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Waypoint
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Waypoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Waypoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPayload> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "5000"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPayload> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "4500"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mean> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#variance> "50"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "280"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution> .
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer> <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass> "200"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,618 @@
+@prefix : <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#> .
+
+<http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle
+:hasAirVehicle rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Mission ,
+                           :Package .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPackage
+:hasPackage rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Mission .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPayload
+:hasPayload rdf:type owl:ObjectProperty ;
+            rdfs:domain :Platform .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasQuantity
+:hasQuantity rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :CrewMember .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasValue
+:hasValue rdf:type owl:ObjectProperty ;
+          rdfs:comment "Captures the actual measurement value for the Measure (e.g., 500 km/h for speed)." .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDefinedBy
+:isDefinedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :CrewMember ;
+             rdfs:range :ProbilityDensityFunction .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDesignedBy
+:isDesignedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isMeasuredBy
+:isMeasuredBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:comment "Links Metric to Measure." .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#performs
+:performs rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#requires
+:requires rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#acceleration
+:acceleration rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :physicalProperties ;
+              rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#address
+:address rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :vendorProperties ;
+         rdfs:domain :Vendor ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#airvehicleProperties
+:airvehicleProperties rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#altitude
+:altitude rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :physicalProperties ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#boundingBox
+:boundingBox rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :physicalProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#cost
+:cost rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :physicalProperties ;
+      rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#degrees_of_freedom
+:degrees_of_freedom rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :functionProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#density
+:density rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :physicalProperties ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#emailAddress
+:emailAddress rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :personnelProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#engineeringAthourity
+:engineeringAthourity rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf :vendorProperties ;
+                      rdfs:domain :Vendor ;
+                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#firstName
+:firstName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :personnelProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#functionProperties
+:functionProperties rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#heading
+:heading rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :physicalProperties ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#height
+:height rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :boundingBox ;
+        rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#lastName
+:lastName rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :personnelProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#length
+:length rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :boundingBox ;
+        rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#location
+:location rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :physicalProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mass
+:mass rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :physicalProperties ;
+      rdfs:domain :CrewMember ,
+                  :Payload ,
+                  :Platform ,
+                  :Sensor ,
+                  :Weapon ;
+      rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximum
+:maximum rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :functionProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumAltitude
+:maximumAltitude rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :airvehicleProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#maximumSpeed
+:maximumSpeed rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :airvehicleProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#mean
+:mean rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :functionProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#minimum
+:minimum rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :functionProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#personnelProperties
+:personnelProperties rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#phoneNumber
+:phoneNumber rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :personnelProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#physicalProperties
+:physicalProperties rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#range
+:range rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf :airvehicleProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#rate
+:rate rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :functionProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#scale_parameter
+:scale_parameter rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :functionProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#shape_parameter
+:shape_parameter rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :functionProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#speed
+:speed rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf :physicalProperties ;
+       rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#variance
+:variance rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :functionProperties .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#vendorProperties
+:vendorProperties rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#width
+:width rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf :boundingBox ;
+       rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action
+:Action rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor222
+:ActiveSensor222 rdf:type owl:Class ;
+                 rdfs:subClassOf :Sensor .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle
+:AirVehicle rdf:type owl:Class ;
+            rdfs:subClassOf :Platform .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Attack
+:Attack rdf:type owl:Class ;
+        rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Bomb
+:Bomb rdf:type owl:Class ;
+      rdfs:subClassOf :Weapon .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Call
+:Call rdf:type owl:Class ;
+      rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Classify
+:Classify rdf:type owl:Class ;
+          rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Climb
+:Climb rdf:type owl:Class ;
+       rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Command
+:Command rdf:type owl:Class ;
+         rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Condition
+:Condition rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CounterMeasure
+:CounterMeasure rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember
+:CrewMember rdf:type owl:Class ;
+            owl:equivalentClass :Payload .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Cruise
+:Cruise rdf:type owl:Class ;
+        rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Decend
+:Decend rdf:type owl:Class ;
+        rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Drop
+:Drop rdf:type owl:Class ;
+      rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#DurationTime
+:DurationTime rdf:type owl:Class ;
+              rdfs:subClassOf :Time .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#EndTIme
+:EndTIme rdf:type owl:Class ;
+         rdfs:subClassOf :Time .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function
+:Function rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gun
+:Gun rdf:type owl:Class ;
+     rdfs:subClassOf :Weapon .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Identify
+:Identify rdf:type owl:Class ;
+          rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPI
+:KPI rdf:type owl:Class ;
+     rdfs:subClassOf :Metric .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#KPP
+:KPP rdf:type owl:Class ;
+     rdfs:subClassOf :Metric .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Land
+:Land rdf:type owl:Class ;
+      rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Launch
+:Launch rdf:type owl:Class ;
+        rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Loiter
+:Loiter rdf:type owl:Class ;
+        rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOE
+:MOE rdf:type owl:Class ;
+     rdfs:subClassOf :Metric .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MOP
+:MOP rdf:type owl:Class ;
+     rdfs:subClassOf :Metric .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Measure
+:Measure rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Metric
+:Metric rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Miscellaneaous
+:Miscellaneaous rdf:type owl:Class ;
+                owl:equivalentClass :Payload .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile
+:Missile rdf:type owl:Class ;
+         rdfs:subClassOf :Weapon .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission
+:Mission rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissionModel
+:MissionModel rdf:type owl:Class ;
+              rdfs:subClassOf :Model .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model
+:Model rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution
+:NormalDistribution rdf:type owl:Class ;
+                    rdfs:subClassOf :ProbilityDensityFunction .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Notify
+:Notify rdf:type owl:Class ;
+        rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Package
+:Package rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PassiveSensor
+:PassiveSensor rdf:type owl:Class ;
+               rdfs:subClassOf :Sensor .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload
+:Payload rdf:type owl:Class ;
+         owl:equivalentClass :Sensor ,
+                             :Weapon .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PerformanceModel
+:PerformanceModel rdf:type owl:Class ;
+                  rdfs:subClassOf :Model .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform
+:Platform rdf:type owl:Class ;
+          owl:equivalentClass :Target .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction
+:ProbilityDensityFunction rdf:type owl:Class ;
+                          rdfs:subClassOf :Function .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ReliabilityModel
+:ReliabilityModel rdf:type owl:Class ;
+                  rdfs:subClassOf :Model .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Requirement
+:Requirement rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor
+:Sensor rdf:type owl:Class ;
+        owl:equivalentClass :Target .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Ship
+:Ship rdf:type owl:Class ;
+      rdfs:subClassOf :Platform .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Specification
+:Specification rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#StartTime
+:StartTime rdf:type owl:Class ;
+           rdfs:subClassOf :Time .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SustaimmentModel
+:SustaimmentModel rdf:type owl:Class ;
+                  rdfs:subClassOf :Model .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Target
+:Target rdf:type owl:Class ;
+        owl:equivalentClass :Weapon .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time
+:Time rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Vendor
+:Vendor rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Warmup
+:Warmup rdf:type owl:Class ;
+        rdfs:subClassOf :Action .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Waypoint
+:Waypoint rdf:type owl:Class ;
+          rdfs:subClassOf :Target .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon
+:Weapon rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1
+:AV1 rdf:type owl:NamedIndividual ,
+              :AirVehicle ;
+     :hasPayload :Payload1 ;
+     :mass 5000 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2
+:AV2 rdf:type owl:NamedIndividual ,
+              :AirVehicle ;
+     :hasPayload :Payload1 ;
+     :mass 4500 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot
+:CoPilot rdf:type owl:NamedIndividual ;
+         :isDefinedBy :CrewMass_NormalDistrbution ;
+         :mass 200 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution
+:CrewMass_NormalDistrbution rdf:type owl:NamedIndividual ,
+                                     :NormalDistribution ;
+                            :mean 200 ;
+                            :variance 50 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner
+:Gunner rdf:type owl:NamedIndividual ,
+                 :CrewMember ;
+        :isDefinedBy :CrewMass_NormalDistrbution ;
+        :mass 200 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant
+:MedicalAttendant rdf:type owl:NamedIndividual ,
+                           :CrewMember ;
+                  :isDefinedBy :CrewMass_NormalDistrbution ;
+                  :mass 200 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB
+:MissileB rdf:type owl:NamedIndividual ,
+                   :Missile ;
+          :mass 0 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissleA
+:MissleA rdf:type owl:NamedIndividual ,
+                  :Missile ;
+         :mass 280 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1
+:Payload1 rdf:type owl:NamedIndividual ,
+                   :Payload ;
+          :contains :CoPilot ,
+                    :MissileB ,
+                    :MissleA ,
+                    :Pilot .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot
+:Pilot rdf:type owl:NamedIndividual ,
+                :CrewMember ;
+       :isDefinedBy :CrewMass_NormalDistrbution ;
+       :mass 200 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator
+:SensorOperator rdf:type owl:NamedIndividual ,
+                         :CrewMember ;
+                :isDefinedBy :CrewMass_NormalDistrbution ;
+                :mass 200 .
+
+
+###  http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer
+:Swimmer rdf:type owl:NamedIndividual ,
+                  :CrewMember ;
+         :isDefinedBy :CrewMass_NormalDistrbution ;
+         :mass 200 .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
