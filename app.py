@@ -137,19 +137,20 @@ if st.button("Run Query"):
     else:
         st.error(f"Failed to execute query: {response.status_code} - {response.text}")
 
-# Save, Edit, Delete Query Section
-save_name = st.text_input("Enter a name to save the query", value="new_query.sparql")
-if st.button("Save Query"):
-    save_path = os.path.join(QUERY_FOLDER, save_name)
-    with open(save_path, "w") as file:
-        file.write(query)
-    st.success(f"Query saved as {save_name}")
-    st.rerun()
+with st.expander("Save and Manage Queries"):
+    # Save, Edit, Delete Query Section
+    save_name = st.text_input("Enter a name to save the query", value="new_query.sparql")
+    if st.button("Save Query"):
+        save_path = os.path.join(QUERY_FOLDER, save_name)
+        with open(save_path, "w") as file:
+            file.write(query)
+        st.success(f"Query saved as {save_name}")
+        st.rerun()
 
-if selected_query and selected_query != "" and st.button("Delete Query"):
-    os.remove(os.path.join(QUERY_FOLDER, selected_query))
-    st.success(f"Deleted {selected_query}")
-    st.rerun()
+    if selected_query and selected_query != "" and st.button("Delete Query"):
+        os.remove(os.path.join(QUERY_FOLDER, selected_query))
+        st.success(f"Deleted {selected_query}")
+        st.rerun()
 
 # ------------------- Tools and Links Section -----------------------
 with st.sidebar.expander("Tools and Links"):
