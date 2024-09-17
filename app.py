@@ -156,3 +156,4 @@ with st.expander("Save and Manage Queries"):
 with st.sidebar.expander("Tools and Links"):
     st.markdown(f"[Ontology Docs](http://localhost:8080/index-en.html)", unsafe_allow_html=True)
     st.markdown(f"[Fuseki Server](http://localhost:3030)", unsafe_allow_html=True)
+    st.markdown(f"[WebProtege](http://localhost:5000)", unsafe_allow_html=True)
