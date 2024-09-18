@@ -34,6 +34,8 @@ if "ontology_structure" not in st.session_state:
     st.session_state.ontology_structure = {}
 if "prefixes" not in st.session_state:
     st.session_state.prefixes = {}
+if "user_questions" not in st.session_state:
+    st.session_state.user_questions = []
 
 # ------------------- Sidebar Ontology Management -----------------------
 st.sidebar.title("Ontology Management")
@@ -125,12 +127,33 @@ def extract_ontology_structure(prefixes):
     return ontology_summary
 
 # ------------------- Mistral Model Interaction -----------------------
-def process_with_llm(ontology_summary, user_question, model_id):
+def process_with_llm(ontology_summary, user_question, model_id, namespaces):
     """Pass the summarized ontology to the Mistral model along with the user question."""
     ontology_content = json.dumps(ontology_summary, indent=2)
+    
+    # Include typical prefixes
+    typical_prefixes = {
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "xml": "http://www.w3.org/XML/1998/namespace",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    }
+    all_namespaces = {**typical_prefixes, **namespaces}
+    namespace_declaration = "\n".join([f"PREFIX {k}: <{v}>" for k, v in all_namespaces.items()])
+
+    prompt = (
+        f"{namespace_declaration}\n\n"
+        f"Using the following ontology structure, generate a SPARQL query to answer the question: {user_question}\n\n"
+        f"Ontology Structure:\n{ontology_content}\n\n"
+        "Examples of good SPARQL queries:\n"
+        "1. SELECT ?subject WHERE { ?subject a :ClassName }\n"
+        "2. SELECT ?property WHERE { ?subject :hasProperty ?property }\n"
+    )
+    
     data = {
         "model": model_id,
-        "prompt": f"Using the following ontology structure, generate a SPARQL query to answer the question: {user_question}\n\nOntology Structure:\n{ontology_content}"
+        "prompt": prompt
     }
     try:
         llm_response = requests.post(f"{OLLAMA_SERVER_URL}/api/generate", json=data)
@@ -168,6 +191,10 @@ selected_model = st.sidebar.selectbox("Select LLM Model", st.session_state.ollam
 # User input for generating SPARQL query
 user_question = st.sidebar.text_area("Enter your question")
 
+# Save user question to context
+if user_question:
+    st.session_state.user_questions.append(user_question)
+
 # Extract ontology structure and generate SPARQL query
 if st.sidebar.button("Extract Ontology Structure"):
     ontology_files = os.listdir(ONTOLOGY_FOLDER)
@@ -183,7 +210,12 @@ if st.sidebar.button("Extract Ontology Structure"):
 if st.sidebar.button("Generate SPARQL Query"):
     if "ontology_structure" in st.session_state:
         # Call the LLM with extracted ontology structure and user question
-        st.session_state.generated_query = process_with_llm(st.session_state.ontology_structure, user_question, selected_model)
+        st.session_state.generated_query = process_with_llm(
+            st.session_state.ontology_structure, 
+            user_question, 
+            selected_model,
+            st.session_state.prefixes  # Pass namespaces to the model
+        )
         st.write("Generated Query:", st.session_state.generated_query)  # Log the query for debugging
         st.success("SPARQL query generated successfully.")
     else:
