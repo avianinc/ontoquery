@@ -430,10 +430,10 @@ def display_results(results):
 
         data = []
         for row in rows:
-            data.append([row.get(var, {}).get('value', '') for var in headers])
+            data.append([row.get(var, {}).get('value', '').split('#')[-1] for var in headers])
 
         df = pd.DataFrame(data, columns=headers)
-        st.dataframe(df)
+        st.dataframe(df, use_container_width=True)
     else:
         st.write("No results found.")
 
@@ -446,17 +446,20 @@ def display_gpu_utilization():
         gpu_name = torch.cuda.get_device_name(device)
         memory_allocated = torch.cuda.memory_allocated(device) / (1024 ** 3)
         memory_reserved = torch.cuda.memory_reserved(device) / (1024 ** 3)
-        st.write(f"**GPU Name:** {gpu_name}")
-        st.write(f"**Memory Allocated:** {memory_allocated:.2f} GB")
-        st.write(f"**Memory Reserved:** {memory_reserved:.2f} GB")
+        with st.container(border=True):
+            st.write(f"**GPU Name:** {gpu_name}")
+            st.write(f"**Memory Allocated:** {memory_allocated:.2f} GB")
+            st.write(f"**Memory Reserved:** {memory_reserved:.2f} GB")
     else:
         st.write("**No GPU available.**")
 
 def main():
     st.title("Ontology Question Answering System")
 
-    # Display GPU Utilization
-    display_gpu_utilization()
+    with st.expander("GPU Information"):
+        st.write("This application uses a GPU for running the Language Model.\n The following GPU information is available:")
+        # Display GPU Utilization
+        display_gpu_utilization()
 
     # Ontology Upload
     uploaded_file = st.file_uploader("Upload your ontology file", type=['owl', 'rdf', 'ttl'])
@@ -465,16 +468,17 @@ def main():
         file_format = detect_file_format(uploaded_file.name)
 
         try:
-            # Extract prefixes
-            prefixes = extract_prefixes(file_content, file_format)
-            st.subheader("Extracted Prefixes and Namespaces")
-            st.code('\n'.join([f"{k}: {v}" for k, v in prefixes.items()]))
+            with st.expander("Ontology File Content and Extracted Information"):
+                # Extract prefixes
+                prefixes = extract_prefixes(file_content, file_format)
+                st.subheader("Extracted Prefixes and Namespaces")
+                st.code('\n'.join([f"{k}: {v}" for k, v in prefixes.items()]))
 
-            # Extract ontology elements
-            classes, object_properties, data_properties, individuals, graph = extract_ontology_elements(file_content, file_format)
-            ontology_summary = generate_ontology_summary(graph, classes, object_properties, data_properties, individuals, prefixes)
-            st.subheader("Ontology Summary")
-            st.text(ontology_summary)
+                # Extract ontology elements
+                classes, object_properties, data_properties, individuals, graph = extract_ontology_elements(file_content, file_format)
+                ontology_summary = generate_ontology_summary(graph, classes, object_properties, data_properties, individuals, prefixes)
+                st.subheader("Ontology Summary")
+                st.text(ontology_summary)
 
             # Load into Fuseki
             with st.spinner("Loading ontology into Fuseki..."):
@@ -482,28 +486,30 @@ def main():
             st.success("Ontology loaded into Fuseki successfully.")
 
             # Question Input
-            question = st.text_input("Ask a question about the ontology:")
+            question = st.text_area("Ask a question about the ontology:", height=100)
             if question:
                 # Generate SPARQL query
-                with st.spinner("Generating SPARQL query..."):
-                    sparql_query = generate_sparql_query(question, prefixes, ontology_summary)
+                with st.expander("SPARQL Query Generation"):
+                    with st.spinner("Generating SPARQL query..."):
+                        sparql_query = generate_sparql_query(question, prefixes, ontology_summary)
 
-                    # Post-process the SPARQL query
-                    sparql_query = post_process_sparql_query(sparql_query, prefixes)
+                        # Post-process the SPARQL query
+                        sparql_query = post_process_sparql_query(sparql_query, prefixes)
 
-                # Validate SPARQL syntax
-                try:
-                    prepareQuery(sparql_query)
-                except Exception as e:
-                    st.error(f"Invalid SPARQL query syntax: {str(e)}")
-                    return
+                    # Validate SPARQL syntax
+                    try:
+                        prepareQuery(sparql_query)
+                    except Exception as e:
+                        st.error(f"Invalid SPARQL query syntax: {str(e)}")
+                        return
 
                 # Execute SPARQL query
                 try:
-                    with st.spinner("Executing SPARQL query..."):
-                        results = execute_sparql_query(sparql_query)
-                    st.subheader("Query Results")
-                    display_results(results)
+                    with st.container(border=True):
+                        with st.spinner("Executing SPARQL query..."):
+                            results = execute_sparql_query(sparql_query)
+                        st.subheader("Query Results")
+                        display_results(results)
                 except Exception as e:
                     st.error(f"Failed to execute SPARQL query: {str(e)}")
         except Exception as e:
