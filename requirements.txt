@@ -2,3 +2,4 @@ streamlit
 rdflib
 requests
 pandas
+pydantic
