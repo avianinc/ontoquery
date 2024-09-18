@@ -3,9 +3,13 @@ import streamlit as st
 import requests
 import pandas as pd
 from requests.auth import HTTPBasicAuth
+import json
 
 # Set the page layout to wide
 st.set_page_config(layout="wide")
+
+# Define the Ollama server URL
+OLLAMA_SERVER_URL = "http://192.168.86.100:11434"
 
 # Define Fuseki endpoints
 FUSEKI_UPDATE_ENDPOINT = "http://fuseki:3030/ds/update"
@@ -19,61 +23,25 @@ ONTOLOGY_FOLDER = "data/ontologies"
 QUERY_FOLDER = "data/queries"
 
 # Ensure the ontology and query folders exist
-if not os.path.exists(ONTOLOGY_FOLDER):
-    os.makedirs(ONTOLOGY_FOLDER)
+os.makedirs(ONTOLOGY_FOLDER, exist_ok=True)
+os.makedirs(QUERY_FOLDER, exist_ok=True)
 
-if not os.path.exists(QUERY_FOLDER):
-    os.makedirs(QUERY_FOLDER)
+# Initialize session state for the generated query and ontology structure
+if "generated_query" not in st.session_state:
+    st.session_state.generated_query = ""
+if "ontology_structure" not in st.session_state:
+    st.session_state.ontology_structure = {}
 
-# ------------------- Sidebar Ontology Upload and File Management -----------------------
+# ------------------- Sidebar Ontology Management -----------------------
 st.sidebar.title("Ontology Management")
-
-# Checkbox to clear existing dataset before uploading
-clear_existing_data = st.sidebar.checkbox("Clear existing dataset before uploading", value=True)
 
 # Ontology upload section
 uploaded_file = st.sidebar.file_uploader("Upload an ontology file", type=["ttl", "rdf", "owl"])
 if uploaded_file and st.sidebar.button("Upload Ontology"):
-    file_ext = uploaded_file.name.split('.')[-1]
-    content_type = "text/turtle" if file_ext == "ttl" else "application/rdf+xml"
     save_path = os.path.join(ONTOLOGY_FOLDER, uploaded_file.name)
-
-    # Save the file locally
     with open(save_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     st.sidebar.success(f"Ontology {uploaded_file.name} saved locally.")
-
-    # Clear existing Fuseki data if checkbox is selected
-    if clear_existing_data:
-        st.sidebar.info("Clearing existing Fuseki dataset...")
-        delete_query = """
-        DELETE WHERE {
-            ?s ?p ?o
-        }
-        """
-        delete_response = requests.post(
-            FUSEKI_UPDATE_ENDPOINT,
-            headers={"Content-Type": "application/sparql-update"},
-            data=delete_query,
-            auth=HTTPBasicAuth("admin", "adminpassword")  # Replace with correct credentials
-        )
-        if delete_response.status_code == 200:
-            st.sidebar.success("Existing dataset cleared successfully.")
-        else:
-            st.sidebar.error(f"Failed to clear dataset: {delete_response.status_code} - {delete_response.text}")
-    
-    # Upload ontology to Fuseki
-    upload_response = requests.post(
-        FUSEKI_DATA_ENDPOINT,
-        headers={"Content-Type": content_type},
-        data=uploaded_file.getvalue(),
-        auth=HTTPBasicAuth("admin", "adminpassword")  # Replace with correct credentials
-    )
-    if upload_response.status_code == 200:
-        st.sidebar.success(f"Ontology {uploaded_file.name} uploaded to Fuseki.")
-    else:
-        st.sidebar.error(f"Failed to upload ontology: {upload_response.status_code} - {upload_response.text}")
-    st.rerun()
 
 # List existing ontologies with delete buttons
 ontology_files = os.listdir(ONTOLOGY_FOLDER)
@@ -82,35 +50,152 @@ if ontology_files:
     for ontology_file in ontology_files:
         col1, col2 = st.sidebar.columns([4, 1])
         col1.write(ontology_file)
-        if col2.button("X", key=ontology_file):
+        if col2.button("Delete", key=ontology_file):
             os.remove(os.path.join(ONTOLOGY_FOLDER, ontology_file))
             st.sidebar.success(f"Deleted {ontology_file}")
-            st.rerun()
+            st.experimental_rerun()  # Refresh the app
 
-# ------------------- SPARQL Query Management Section -----------------------
+# ------------------- SPARQL Queries to Extract Ontology Data -----------------------
+def query_fuseki(sparql_query):
+    """Send a SPARQL query to the Fuseki server and return the result."""
+    headers = {"Accept": "application/sparql-results+json"}
+    params = {'query': sparql_query}
+    response = requests.get(FUSEKI_QUERY_ENDPOINT, params=params, headers=headers,
+                            auth=HTTPBasicAuth("admin", "adminpassword"))  # Replace with your Fuseki credentials
+    if response.status_code == 200:
+        return response.json()
+    else:
+        st.error(f"Failed to query Fuseki: {response.status_code} - {response.text}")
+        return None
+
+def extract_ontology_structure():
+    """Extract classes, object properties, data properties, and individuals from Fuseki."""
+    ontology_summary = {}
+
+    # Prefix declaration for SPARQL queries
+    prefix_declaration = """
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    """
+
+    # Query classes
+    classes_query = prefix_declaration + """
+    SELECT ?class WHERE { ?class a owl:Class }
+    """
+    classes_result = query_fuseki(classes_query)
+    if classes_result:
+        classes = [binding['class']['value'].split('#')[-1] for binding in classes_result['results']['bindings']]
+        ontology_summary['Classes'] = classes
+
+    # Query object properties
+    object_properties_query = prefix_declaration + """
+    SELECT ?property WHERE { ?property a owl:ObjectProperty }
+    """
+    object_properties_result = query_fuseki(object_properties_query)
+    if object_properties_result:
+        object_properties = [binding['property']['value'].split('#')[-1] for binding in object_properties_result['results']['bindings']]
+        ontology_summary['ObjectProperties'] = object_properties
+
+    # Query data properties
+    data_properties_query = prefix_declaration + """
+    SELECT ?property WHERE { ?property a owl:DatatypeProperty }
+    """
+    data_properties_result = query_fuseki(data_properties_query)
+    if data_properties_result:
+        data_properties = [binding['property']['value'].split('#')[-1] for binding in data_properties_result['results']['bindings']]
+        ontology_summary['DataProperties'] = data_properties
+
+    # Query individuals
+    individuals_query = prefix_declaration + """
+    SELECT ?individual WHERE { ?individual a owl:NamedIndividual }
+    """
+    individuals_result = query_fuseki(individuals_query)
+    if individuals_result:
+        individuals = [binding['individual']['value'].split('#')[-1] for binding in individuals_result['results']['bindings']]
+        ontology_summary['Individuals'] = individuals
+
+    # Create a summary of relationships
+    relationship_summary = create_relationship_summary(classes, ontology_summary['ObjectProperties'])
+    ontology_summary['RelationshipSummary'] = relationship_summary
+
+    return ontology_summary
+
+def create_relationship_summary(classes, object_properties):
+    """Create a summary of relationships based on classes and object properties."""
+    relationships = []
+    # Sample relationships; customize this based on your ontology's structure
+    if "Package" in classes and "contains" in object_properties:
+        relationships.append("A Package contains one or more Payloads.")
+
+    if "Mission" in classes and "hasAirVehicle" in object_properties:
+        relationships.append("A Mission has one or more AirVehicles.")
+
+    # Add more relationships based on your ontology's structure
+    return relationships
+
+# ------------------- Mistral Model Interaction -----------------------
+def process_with_llm(ontology_summary, user_question, model_id):
+    """Pass the summarized ontology to the Mistral model along with the user question."""
+    ontology_content = json.dumps(ontology_summary, indent=2)
+    data = {
+        "model": model_id,
+        "prompt": f"Using the following ontology structure, generate a SPARQL query to answer the question: {user_question}\n\nOntology Structure:\n{ontology_content}"
+    }
+    try:
+        llm_response = requests.post(f"{OLLAMA_SERVER_URL}/api/generate", json=data)
+        llm_response.raise_for_status()  # Raise an exception for HTTP errors
+
+        json_lines = llm_response.text.strip().splitlines()
+        combined_response = ""
+        for line in json_lines:
+            try:
+                json_data = json.loads(line)
+                combined_response += json_data.get('response', '')
+            except json.JSONDecodeError:
+                continue  # If the line isn't valid JSON, skip it
+
+        return combined_response.strip()  # Return the full response (expected to be just the SPARQL query)
+    except requests.RequestException as e:
+        st.error(f"LLM processing error: {e}")
+        return "Error processing query."
+
+# ------------------- LLM Settings and Query Generation -----------------------
+st.sidebar.title("LLM Settings")
+
+# LLM Model Selection
+ollama_models = ["mistral:7b"]  # You can fetch available models from the Ollama server like before
+selected_model = st.sidebar.selectbox("Select LLM Model", ollama_models)
+
+# User input for generating SPARQL query
+user_question = st.sidebar.text_area("Enter your question")
+
+# Extract ontology structure and generate SPARQL query
+if st.sidebar.button("Extract Ontology Structure"):
+    ontology_structure = extract_ontology_structure()
+    st.session_state.ontology_structure = ontology_structure
+    st.sidebar.json(ontology_structure)  # Display the extracted structure
+
+if st.sidebar.button("Generate SPARQL Query"):
+    if "ontology_structure" in st.session_state:
+        # Call the LLM with extracted ontology structure and user question
+        st.session_state.generated_query = process_with_llm(st.session_state.ontology_structure, user_question, selected_model)
+        st.success("SPARQL query generated successfully.")
+    else:
+        st.error("Ontology structure not yet extracted. Please extract the ontology structure first.")
+
+# ------------------- SPARQL Query Runner -----------------------
 st.title("SPARQL Query Runner")
 
-# Load existing queries
-query_files = os.listdir(QUERY_FOLDER)
-selected_query = st.selectbox("Choose a saved query", [""] + query_files)
-
-# Load selected query
-query = ""
-if selected_query and selected_query != "":
-    with open(os.path.join(QUERY_FOLDER, selected_query), "r") as file:
-        query = file.read()
-
-# Calculate text area height dynamically based on the query content
-if query:
-    text_length = len(query.split('\n'))  # Number of lines in the query
-    height = min(500, max(100, text_length * 20)) + 50  # Dynamic height, capped at 500px
+# Display the generated SPARQL query in a text area
+if "generated_query" in st.session_state:
+    query = st.session_state.generated_query
 else:
-    height = 100  # Default height if no query is loaded
+    query = ""
+query = st.text_area("Generated SPARQL Query", value=query)
 
-query = st.text_area("SPARQL Query", value=query, height=height)
-
-# Execute the Query
-if st.button("Run Query", key="run_query", type="primary"):
+# Execute the SPARQL query
+if st.button("Run Query"):
     response = requests.post(
         FUSEKI_QUERY_ENDPOINT,
         data=query,
@@ -133,24 +218,8 @@ if st.button("Run Query", key="run_query", type="primary"):
         # Create a DataFrame for easier display
         df = pd.DataFrame(rows, columns=columns)
         st.table(df)  # Display the result as a table
-        
     else:
         st.error(f"Failed to execute query: {response.status_code} - {response.text}")
-
-with st.expander("Save and Manage Queries"):
-    # Save, Edit, Delete Query Section
-    save_name = st.text_input("Enter a name to save the query", value="new_query.sparql")
-    if st.button("Save Query"):
-        save_path = os.path.join(QUERY_FOLDER, save_name)
-        with open(save_path, "w") as file:
-            file.write(query)
-        st.success(f"Query saved as {save_name}")
-        st.rerun()
-
-    if selected_query and selected_query != "" and st.button("Delete Query"):
-        os.remove(os.path.join(QUERY_FOLDER, selected_query))
-        st.success(f"Deleted {selected_query}")
-        st.rerun()
 
 # ------------------- Tools and Links Section -----------------------
 with st.sidebar.expander("Tools and Links"):

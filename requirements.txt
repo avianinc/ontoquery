@@ -1,3 +1,4 @@
 streamlit
 rdflib
 requests
+pandas
