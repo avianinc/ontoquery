@@ -1,9 +1,5 @@
 streamlit
 rdflib
-pydantic
-streamlit
-rdflib
 requests
 pandas
 sentence-transformers
-

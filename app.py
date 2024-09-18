@@ -11,6 +11,13 @@ import re
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
+import os
+
+# Set cache directory paths
+os.environ['TRANSFORMERS_CACHE'] = '/app/cache'
+os.environ['HF_HOME'] = '/app/cache'
+os.environ['HF_DATASETS_CACHE'] = '/app/cache'
+os.environ['HF_HUB_DISABLE_TELEMETRY'] = '1'
 
 # Constants
 OLLAMA_SERVER_URL = "http://192.168.86.100:11434"  # Adjust to your LLM endpoint
@@ -20,8 +27,8 @@ FUSEKI_UPDATE_ENDPOINT = "http://fuseki:3030/ds/update"
 USERNAME = "admin"
 PASSWORD = "adminpassword"
 
-# Initialize the embedding model globally
-embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+# Initialize the embedding model with GPU support
+embedding_model = SentenceTransformer('all-MiniLM-L6-v2', device='cuda', cache_folder='/app/cache')
 
 # Define standard prefixes
 STANDARD_PREFIXES = {
@@ -131,24 +138,38 @@ def generate_embeddings(ontology_elements):
     Generate embeddings for ontology elements.
     """
     labels = [get_label(str(e)) for e in ontology_elements]
-    embeddings = embedding_model.encode(labels)
+    embeddings = embedding_model.encode(labels, convert_to_tensor=True, show_progress_bar=False)
+    embeddings = embeddings.detach().cpu().numpy()
     return labels, embeddings
 
 def build_vector_database(embeddings):
     """
-    Build a FAISS vector database from embeddings.
+    Build a FAISS GPU vector database from embeddings.
     """
-    dimension = embeddings.shape[1]
-    index = faiss.IndexFlatL2(dimension)
-    index.add(embeddings)
-    return index
+    # Convert embeddings to float32 if not already
+    embeddings = embeddings.astype('float32')
 
-def search_relevant_elements(question, labels, index, ontology_elements, k=100):
+    # Initialize GPU resources
+    res = faiss.StandardGpuResources()
+
+    # Define the index
+    dimension = embeddings.shape[1]
+    flat_config = faiss.GpuIndexFlatConfig()
+    flat_config.device = 0  # GPU device id
+
+    # Build the index on GPU
+    gpu_index = faiss.GpuIndexFlatL2(res, dimension, flat_config)
+    gpu_index.add(embeddings)
+    return gpu_index
+
+def search_relevant_elements(question, labels, index, ontology_elements, k=20):
     """
     Search for relevant ontology elements based on the question.
     """
-    question_embedding = embedding_model.encode([question])
-    distances, indices = index.search(np.array(question_embedding), k)
+    question_embedding = embedding_model.encode([question], convert_to_tensor=True, show_progress_bar=False)
+    question_embedding = question_embedding.detach().cpu().numpy().astype('float32')
+
+    distances, indices = index.search(question_embedding, k)
     relevant_elements = [ontology_elements[idx] for idx in indices[0]]
     return relevant_elements
 
@@ -159,11 +180,13 @@ def create_ontology_summary_from_elements(relevant_elements, graph, prefixes):
     def shorten_uri(uri):
         for prefix, namespace in prefixes.items():
             if uri.startswith(namespace):
-                return f"{prefix}:{uri.replace(namespace, '')}"
+                local_part = uri.replace(namespace, '')
+                return f"{prefix}:{local_part}"
         # Handle standard namespaces
         for prefix, namespace in STANDARD_PREFIXES.items():
             if uri.startswith(namespace):
-                return f"{prefix}:{uri.replace(namespace, '')}"
+                local_part = uri.replace(namespace, '')
+                return f"{prefix}:{local_part}"
         return uri
 
     classes_short = []
@@ -204,6 +227,10 @@ def generate_sparql_query(question, prefixes, ontology_summary):
     """
     # Construct the PREFIX declarations
     prefix_declarations = '\n'.join([f"PREFIX {k}: <{v}>" for k, v in prefixes.items()])
+    standard_prefixes = '\n'.join([f"PREFIX {k}: <{v}>" for k, v in STANDARD_PREFIXES.items()])
+
+    # Combine all prefixes
+    all_prefixes = f"{standard_prefixes}\n{prefix_declarations}"
 
     # Create the prompt with the ontology summary and explicit instructions
     prompt = f"""
@@ -211,19 +238,18 @@ You are an expert in SPARQL and ontologies.
 
 Given the following prefixes:
 
-{prefix_declarations}
+{all_prefixes}
 
 Ontology Elements:
 {ontology_summary}
 
-Convert the following natural language question into a SPARQL query, using only the classes, properties, and individuals provided above.
+Convert the following natural language question into a SPARQL query, using only the prefixes, classes, properties, and individuals provided above.
 
 Ensure that:
-- You include all necessary PREFIX declarations in your output.
-- You use only the classes, properties, and individuals provided.
+- You include all necessary PREFIX declarations exactly as provided above in your output.
+- Do not introduce any new prefixes or assume any default prefixes.
+- Use only the prefixes as defined above.
 - The query is syntactically correct and complete.
-- Do not include any prefixes not listed above.
-- Do not assume any predefined prefixes.
 - Provide only the SPARQL query. Do not include any explanations or comments.
 
 Question: "{question}"
@@ -261,32 +287,37 @@ def post_process_sparql_query(sparql_query, prefixes):
     """
     Post-process the SPARQL query to fix prefixes and namespaces, and remove any extra text after the last closing brace.
     """
-    # Remove any existing PREFIX declarations not in our prefixes
-    lines = sparql_query.split('\n')
-    new_lines = []
+    # Combine custom and standard prefixes
+    all_prefixes = {**STANDARD_PREFIXES, **prefixes}
+
+    # Parse existing PREFIX declarations in the generated query
+    prefix_pattern = re.compile(r'PREFIX\s+(\w+):\s*<([^>]+)>', re.IGNORECASE)
+    lines = sparql_query.strip().split('\n')
+    query_lines = []
     for line in lines:
-        if line.strip().startswith('PREFIX'):
-            prefix_match = re.match(r'PREFIX\s+(\w+):', line.strip(), re.IGNORECASE)
-            if prefix_match:
-                prefix = prefix_match.group(1)
-                if prefix in prefixes or prefix == 'rdf':
-                    new_lines.append(line)
-                else:
-                    continue  # Skip this line
+        match = prefix_pattern.match(line.strip())
+        if match:
+            prefix, uri = match.groups()
+            # Replace with correct URI if prefix is known
+            if prefix in all_prefixes:
+                correct_uri = all_prefixes[prefix]
+                line = f"PREFIX {prefix}: <{correct_uri}>"
             else:
-                continue  # Skip malformed PREFIX lines
-        else:
-            new_lines.append(line)
-    query_body = '\n'.join(new_lines)
+                # Remove unknown prefixes
+                continue
+        query_lines.append(line)
 
     # Remove any text after the last closing brace '}'
+    query_body = '\n'.join(query_lines)
     last_closing_brace_index = query_body.rfind('}')
     if last_closing_brace_index != -1:
         query_body = query_body[:last_closing_brace_index+1]  # Include the closing brace
 
     # Reconstruct the PREFIX declarations
-    prefix_declarations = '\n'.join([f"PREFIX {k}: <{v}>" for k, v in prefixes.items()])
-    prefix_declarations = f"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n{prefix_declarations}"
+    prefix_declarations = '\n'.join([f"PREFIX {k}: <{v}>" for k, v in all_prefixes.items()])
+    # Ensure 'rdf' prefix is included
+    if 'rdf' not in prefixes:
+        prefix_declarations = f"PREFIX rdf: <{STANDARD_PREFIXES['rdf']}>\n{prefix_declarations}"
 
     # Combine the correct PREFIX declarations with the query body
     corrected_query = f"{prefix_declarations}\n\n{query_body}"
@@ -325,6 +356,18 @@ def load_ontology_to_fuseki(file_content, file_format):
 
     headers = {'Content-Type': content_type}
 
+    # Clear existing data
+    clear_response = requests.post(
+        FUSEKI_UPDATE_ENDPOINT,
+        data="DROP ALL".encode('utf-8'),
+        headers={'Content-Type': 'application/sparql-update'},
+        auth=HTTPBasicAuth(USERNAME, PASSWORD)
+    )
+
+    if clear_response.status_code not in [200, 204]:
+        raise Exception(f"Failed to clear Fuseki dataset: Status Code: {clear_response.status_code}, Reason: {clear_response.reason}, Response Text: {clear_response.text}")
+
+    # Load new data
     response = requests.post(
         FUSEKI_DATA_ENDPOINT,
         data=file_content.encode('utf-8'),
@@ -333,7 +376,7 @@ def load_ontology_to_fuseki(file_content, file_format):
     )
 
     if response.status_code not in (200, 201):
-        raise Exception(f"Failed to load ontology into Fuseki: {response.text}")
+        raise Exception(f"Failed to load ontology into Fuseki: Status Code: {response.status_code}, Reason: {response.reason}, Response Text: {response.text}")
 
 def detect_file_format(file_name):
     """
@@ -388,7 +431,7 @@ def main():
             labels, embeddings = generate_embeddings(ontology_elements)
 
             # Build the vector database
-            index = build_vector_database(np.array(embeddings))
+            index = build_vector_database(embeddings)
 
             # Load into Fuseki
             with st.spinner("Loading ontology into Fuseki..."):
@@ -400,7 +443,7 @@ def main():
             if question:
                 # Search for relevant ontology elements
                 relevant_elements = search_relevant_elements(question, labels, index, ontology_elements)
-                
+
                 # Create ontology summary from relevant elements
                 ontology_summary = create_ontology_summary_from_elements(relevant_elements, graph, prefixes)
                 st.subheader("Ontology Summary")
