@@ -8,6 +8,9 @@ from requests.auth import HTTPBasicAuth
 import pandas as pd
 import json
 import re
+from sentence_transformers import SentenceTransformer
+import faiss
+import numpy as np
 
 # Constants
 OLLAMA_SERVER_URL = "http://192.168.86.100:11434"  # Adjust to your LLM endpoint
@@ -16,6 +19,9 @@ FUSEKI_QUERY_ENDPOINT = "http://fuseki:3030/ds/query"
 FUSEKI_UPDATE_ENDPOINT = "http://fuseki:3030/ds/update"
 USERNAME = "admin"
 PASSWORD = "adminpassword"
+
+# Initialize the embedding model globally
+embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # Define standard prefixes
 STANDARD_PREFIXES = {
@@ -66,7 +72,14 @@ def extract_prefixes(file_content, file_format):
     namespaces = {}
     for prefix, namespace in graph.namespaces():
         if prefix not in standard_prefixes:
-            namespaces[prefix] = str(namespace)
+            namespace_str = str(namespace)
+            # Ensure namespace ends with '#' or '/' based on URI
+            if not namespace_str.endswith(('#', '/')):
+                if '#' in namespace_str:
+                    namespace_str += '#'
+                else:
+                    namespace_str += '/'
+            namespaces[prefix] = namespace_str
 
     # Ensure that at least one custom prefix is extracted
     if not namespaces:
@@ -105,11 +118,43 @@ def extract_ontology_elements(file_content, file_format, prefixes):
            (s, rdflib.RDF.type, rdflib.OWL.DatatypeProperty) not in graph:
             individuals.add(s)
 
-    return classes, object_properties, data_properties, individuals
+    return classes, object_properties, data_properties, individuals, graph
 
-def create_ontology_summary(classes, object_properties, data_properties, individuals, prefixes):
+def get_label(uri):
     """
-    Create a concise summary of the ontology elements to include in the prompt.
+    Extract the label from the URI.
+    """
+    return uri.split('#')[-1] if '#' in uri else uri.rsplit('/', 1)[-1]
+
+def generate_embeddings(ontology_elements):
+    """
+    Generate embeddings for ontology elements.
+    """
+    labels = [get_label(str(e)) for e in ontology_elements]
+    embeddings = embedding_model.encode(labels)
+    return labels, embeddings
+
+def build_vector_database(embeddings):
+    """
+    Build a FAISS vector database from embeddings.
+    """
+    dimension = embeddings.shape[1]
+    index = faiss.IndexFlatL2(dimension)
+    index.add(embeddings)
+    return index
+
+def search_relevant_elements(question, labels, index, ontology_elements, k=100):
+    """
+    Search for relevant ontology elements based on the question.
+    """
+    question_embedding = embedding_model.encode([question])
+    distances, indices = index.search(np.array(question_embedding), k)
+    relevant_elements = [ontology_elements[idx] for idx in indices[0]]
+    return relevant_elements
+
+def create_ontology_summary_from_elements(relevant_elements, graph, prefixes):
+    """
+    Create a concise summary of the relevant ontology elements to include in the prompt.
     """
     def shorten_uri(uri):
         for prefix, namespace in prefixes.items():
@@ -121,31 +166,35 @@ def create_ontology_summary(classes, object_properties, data_properties, individ
                 return f"{prefix}:{uri.replace(namespace, '')}"
         return uri
 
-    # Shorten URIs for readability
-    classes_short = [shorten_uri(str(c)) for c in classes]
-    object_props_short = [shorten_uri(str(op)) for op in object_properties]
-    data_props_short = [shorten_uri(str(dp)) for dp in data_properties]
-    individuals_short = [shorten_uri(str(ind)) for ind in individuals]
+    classes_short = []
+    object_props_short = []
+    data_props_short = []
+    individuals_short = []
 
-    # Limit the number of elements to fit within context size
-    max_elements = 50  # Adjust based on your model's context size
-    classes_list = ', '.join(classes_short[:max_elements])
-    object_props_list = ', '.join(object_props_short[:max_elements])
-    data_props_list = ', '.join(data_props_short[:max_elements])
-    individuals_list = ', '.join(individuals_short[:max_elements])
+    for element in relevant_elements:
+        uri = str(element)
+        short_uri = shorten_uri(uri)
+        if (element, rdflib.RDF.type, rdflib.OWL.Class) in graph:
+            classes_short.append(short_uri)
+        elif (element, rdflib.RDF.type, rdflib.OWL.ObjectProperty) in graph:
+            object_props_short.append(short_uri)
+        elif (element, rdflib.RDF.type, rdflib.OWL.DatatypeProperty) in graph:
+            data_props_short.append(short_uri)
+        else:
+            individuals_short.append(short_uri)
 
     summary = f"""
 Classes:
-{classes_list}
+{', '.join(classes_short)}
 
 Object Properties:
-{object_props_list}
+{', '.join(object_props_short)}
 
 Data Properties:
-{data_props_list}
+{', '.join(data_props_short)}
 
 Individuals:
-{individuals_list}
+{', '.join(individuals_short)}
 """
     return summary.strip()
 
@@ -332,10 +381,14 @@ def main():
             st.code('\n'.join([f"{k}: {v}" for k, v in prefixes.items()]))
 
             # Extract ontology elements
-            classes, object_properties, data_properties, individuals = extract_ontology_elements(file_content, file_format, prefixes)
-            ontology_summary = create_ontology_summary(classes, object_properties, data_properties, individuals, prefixes)
-            st.subheader("Ontology Summary")
-            st.text(ontology_summary)
+            classes, object_properties, data_properties, individuals, graph = extract_ontology_elements(file_content, file_format, prefixes)
+            ontology_elements = list(classes) + list(object_properties) + list(data_properties) + list(individuals)
+
+            # Generate embeddings for ontology elements
+            labels, embeddings = generate_embeddings(ontology_elements)
+
+            # Build the vector database
+            index = build_vector_database(np.array(embeddings))
 
             # Load into Fuseki
             with st.spinner("Loading ontology into Fuseki..."):
@@ -345,6 +398,14 @@ def main():
             # Question Input
             question = st.text_input("Ask a question about the ontology:")
             if question:
+                # Search for relevant ontology elements
+                relevant_elements = search_relevant_elements(question, labels, index, ontology_elements)
+                
+                # Create ontology summary from relevant elements
+                ontology_summary = create_ontology_summary_from_elements(relevant_elements, graph, prefixes)
+                st.subheader("Ontology Summary")
+                st.text(ontology_summary)
+
                 # Generate SPARQL query
                 with st.spinner("Generating SPARQL query..."):
                     sparql_query = generate_sparql_query(question, prefixes, ontology_summary)
