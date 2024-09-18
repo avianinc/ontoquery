@@ -4,6 +4,7 @@ import requests
 import pandas as pd
 from requests.auth import HTTPBasicAuth
 import json
+import rdflib
 
 # Set the page layout to wide
 st.set_page_config(layout="wide")
@@ -31,6 +32,8 @@ if "generated_query" not in st.session_state:
     st.session_state.generated_query = ""
 if "ontology_structure" not in st.session_state:
     st.session_state.ontology_structure = {}
+if "prefixes" not in st.session_state:
+    st.session_state.prefixes = {}
 
 # ------------------- Sidebar Ontology Management -----------------------
 st.sidebar.title("Ontology Management")
@@ -50,7 +53,7 @@ if ontology_files:
     for ontology_file in ontology_files:
         col1, col2 = st.sidebar.columns([4, 1])
         col1.write(ontology_file)
-        if col2.button("Delete", key=ontology_file):
+        if col2.button("x", key=ontology_file):
             os.remove(os.path.join(ONTOLOGY_FOLDER, ontology_file))
             st.sidebar.success(f"Deleted {ontology_file}")
             st.experimental_rerun()  # Refresh the app
@@ -68,16 +71,20 @@ def query_fuseki(sparql_query):
         st.error(f"Failed to query Fuseki: {response.status_code} - {response.text}")
         return None
 
-def extract_ontology_structure():
+def extract_prefixes(ontology_file):
+    """Extract prefixes from the ontology file using rdflib."""
+    g = rdflib.Graph()
+    g.parse(ontology_file)
+
+    prefixes = {}
+    for prefix, uri in g.namespace_manager.namespaces():
+        prefixes[prefix] = str(uri)
+    return prefixes
+
+def extract_ontology_structure(prefixes):
     """Extract classes, object properties, data properties, and individuals from Fuseki."""
     ontology_summary = {}
-
-    # Prefix declaration for SPARQL queries
-    prefix_declaration = """
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    """
+    prefix_declaration = "\n".join([f"PREFIX {k}: <{v}>" for k, v in prefixes.items()])
 
     # Query classes
     classes_query = prefix_declaration + """
@@ -115,24 +122,7 @@ def extract_ontology_structure():
         individuals = [binding['individual']['value'].split('#')[-1] for binding in individuals_result['results']['bindings']]
         ontology_summary['Individuals'] = individuals
 
-    # Create a summary of relationships
-    relationship_summary = create_relationship_summary(classes, ontology_summary['ObjectProperties'])
-    ontology_summary['RelationshipSummary'] = relationship_summary
-
     return ontology_summary
-
-def create_relationship_summary(classes, object_properties):
-    """Create a summary of relationships based on classes and object properties."""
-    relationships = []
-    # Sample relationships; customize this based on your ontology's structure
-    if "Package" in classes and "contains" in object_properties:
-        relationships.append("A Package contains one or more Payloads.")
-
-    if "Mission" in classes and "hasAirVehicle" in object_properties:
-        relationships.append("A Mission has one or more AirVehicles.")
-
-    # Add more relationships based on your ontology's structure
-    return relationships
 
 # ------------------- Mistral Model Interaction -----------------------
 def process_with_llm(ontology_summary, user_question, model_id):
@@ -163,18 +153,32 @@ def process_with_llm(ontology_summary, user_question, model_id):
 # ------------------- LLM Settings and Query Generation -----------------------
 st.sidebar.title("LLM Settings")
 
-# LLM Model Selection
-ollama_models = ["mistral:7b"]  # You can fetch available models from the Ollama server like before
-selected_model = st.sidebar.selectbox("Select LLM Model", ollama_models)
+# Fetch available models from the Ollama server
+if "ollama_models" not in st.session_state:
+    try:
+        response = requests.get(f"{OLLAMA_SERVER_URL}/v1/models")
+        response.raise_for_status()
+        st.session_state.ollama_models = [model["id"] for model in response.json().get("data", [])]
+    except Exception as e:
+        st.error(f"Error fetching models: {e}")
+        st.session_state.ollama_models = ["mistral:7b"]  # Default fallback
+
+selected_model = st.sidebar.selectbox("Select LLM Model", st.session_state.ollama_models)
 
 # User input for generating SPARQL query
 user_question = st.sidebar.text_area("Enter your question")
 
 # Extract ontology structure and generate SPARQL query
 if st.sidebar.button("Extract Ontology Structure"):
-    ontology_structure = extract_ontology_structure()
-    st.session_state.ontology_structure = ontology_structure
-    st.sidebar.json(ontology_structure)  # Display the extracted structure
+    ontology_files = os.listdir(ONTOLOGY_FOLDER)
+    if ontology_files:
+        ontology_file_path = os.path.join(ONTOLOGY_FOLDER, ontology_files[0])  # Use the first file for prefix extraction
+        st.session_state.prefixes = extract_prefixes(ontology_file_path)
+        ontology_structure = extract_ontology_structure(st.session_state.prefixes)
+        st.session_state.ontology_structure = ontology_structure
+        st.sidebar.json(ontology_structure)  # Display the extracted structure
+    else:
+        st.error("No ontology files found to extract structure.")
 
 if st.sidebar.button("Generate SPARQL Query"):
     if "ontology_structure" in st.session_state:
@@ -220,6 +224,24 @@ if st.button("Run Query"):
         st.table(df)  # Display the result as a table
     else:
         st.error(f"Failed to execute query: {response.status_code} - {response.text}")
+
+# ------------------- Save Query Management -----------------------
+with st.expander("Save and Manage Queries"):
+    save_name = st.text_input("Enter a name to save the query", value="new_query.sparql")
+    if st.button("Save Query"):
+        save_path = os.path.join(QUERY_FOLDER, save_name)
+        with open(save_path, "w") as file:
+            file.write(query)
+        st.success(f"Query saved as {save_name}")
+        st.experimental_rerun()
+
+    saved_queries = os.listdir(QUERY_FOLDER)
+    selected_saved_query = st.selectbox("Choose a saved query", [""] + saved_queries)
+    
+    if selected_saved_query:
+        with open(os.path.join(QUERY_FOLDER, selected_saved_query), "r") as file:
+            saved_query_content = file.read()
+        st.text_area("Loaded Saved Query", value=saved_query_content, height=150)
 
 # ------------------- Tools and Links Section -----------------------
 with st.sidebar.expander("Tools and Links"):
