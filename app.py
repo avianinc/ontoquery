@@ -27,7 +27,7 @@ QUERY_FOLDER = "data/queries"
 os.makedirs(ONTOLOGY_FOLDER, exist_ok=True)
 os.makedirs(QUERY_FOLDER, exist_ok=True)
 
-# Initialize session state for the generated query and ontology structure
+# Initialize session state
 if "generated_query" not in st.session_state:
     st.session_state.generated_query = ""
 if "ontology_structure" not in st.session_state:
@@ -184,6 +184,7 @@ if st.sidebar.button("Generate SPARQL Query"):
     if "ontology_structure" in st.session_state:
         # Call the LLM with extracted ontology structure and user question
         st.session_state.generated_query = process_with_llm(st.session_state.ontology_structure, user_question, selected_model)
+        st.write("Generated Query:", st.session_state.generated_query)  # Log the query for debugging
         st.success("SPARQL query generated successfully.")
     else:
         st.error("Ontology structure not yet extracted. Please extract the ontology structure first.")
@@ -192,21 +193,14 @@ if st.sidebar.button("Generate SPARQL Query"):
 st.title("SPARQL Query Runner")
 
 # Display the generated SPARQL query in a text area
-if "generated_query" in st.session_state:
-    query = st.session_state.generated_query
-else:
-    query = ""
-query = st.text_area("Generated SPARQL Query", value=query)
+query = st.text_area("Generated SPARQL Query", value=st.session_state.generated_query)
 
 # Execute the SPARQL query
 if st.button("Run Query"):
-    response = requests.post(
+    response = requests.get(
         FUSEKI_QUERY_ENDPOINT,
-        data=query,
-        headers={
-            "Content-Type": "application/sparql-query",
-            "Accept": "application/sparql-results+json"
-        }
+        params={'query': query},
+        headers={"Accept": "application/sparql-results+json"}
     )
     
     if response.status_code == 200:
