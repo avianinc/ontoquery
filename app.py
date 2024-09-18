@@ -1,5 +1,6 @@
 # app.py
 
+import os
 import streamlit as st
 import rdflib
 from rdflib.plugins.sparql import prepareQuery
@@ -11,13 +12,12 @@ import re
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
-import os
+import logging
+import torch
 
-# Set cache directory paths
-os.environ['TRANSFORMERS_CACHE'] = '/app/cache'
-os.environ['HF_HOME'] = '/app/cache'
-os.environ['HF_DATASETS_CACHE'] = '/app/cache'
-os.environ['HF_HUB_DISABLE_TELEMETRY'] = '1'
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Constants
 OLLAMA_SERVER_URL = "http://192.168.86.100:11434"  # Adjust to your LLM endpoint
@@ -27,8 +27,20 @@ FUSEKI_UPDATE_ENDPOINT = "http://fuseki:3030/ds/update"
 USERNAME = "admin"
 PASSWORD = "adminpassword"
 
+# Set cache directory paths
+os.environ['TRANSFORMERS_CACHE'] = '/app/cache'
+os.environ['HF_HOME'] = '/app/cache'
+os.environ['HF_DATASETS_CACHE'] = '/app/cache'
+os.environ['HF_HUB_DISABLE_TELEMETRY'] = '1'
+
 # Initialize the embedding model with GPU support
-embedding_model = SentenceTransformer('all-MiniLM-L6-v2', device='cuda', cache_folder='/app/cache')
+if torch.cuda.is_available():
+    device = 'cuda'
+else:
+    device = 'cpu'
+embedding_model = SentenceTransformer('all-MiniLM-L6-v2', device=device, cache_folder='/app/cache')
+logger.info(f"Embedding model loaded on device: {device}")
+st.write(f"Embedding model loaded on device: {device}")
 
 # Define standard prefixes
 STANDARD_PREFIXES = {
@@ -62,25 +74,18 @@ STANDARD_PREFIXES = {
     'dcat': 'http://www.w3.org/ns/dcat#',
     'prof': 'http://www.w3.org/ns/dx/prof/',
     'xhtml': 'http://www.w3.org/1999/xhtml/vocab#',
-    # Add any other standard prefixes you need
 }
 
 def extract_prefixes(file_content, file_format):
-    """
-    Extract custom prefixes and namespaces from the ontology file content.
-    """
     graph = rdflib.Graph()
     graph.parse(data=file_content, format=file_format)
 
-    # Define standard prefixes to exclude
     standard_prefixes = set(STANDARD_PREFIXES.keys())
 
-    # Extract namespaces
     namespaces = {}
     for prefix, namespace in graph.namespaces():
         if prefix not in standard_prefixes:
             namespace_str = str(namespace)
-            # Ensure namespace ends with '#' or '/' based on URI
             if not namespace_str.endswith(('#', '/')):
                 if '#' in namespace_str:
                     namespace_str += '#'
@@ -88,7 +93,6 @@ def extract_prefixes(file_content, file_format):
                     namespace_str += '/'
             namespaces[prefix] = namespace_str
 
-    # Ensure that at least one custom prefix is extracted
     if not namespaces:
         st.error("No custom prefixes found in the ontology.")
         raise Exception("No custom prefixes found in the ontology.")
@@ -96,28 +100,21 @@ def extract_prefixes(file_content, file_format):
     return namespaces
 
 def extract_ontology_elements(file_content, file_format, prefixes):
-    """
-    Extract classes, object properties, data properties, and individuals from the ontology.
-    """
     graph = rdflib.Graph()
     graph.parse(data=file_content, format=file_format)
 
-    # Extract classes
     classes = set()
     for s in graph.subjects(rdflib.RDF.type, rdflib.OWL.Class):
         classes.add(s)
 
-    # Extract object properties
     object_properties = set()
     for s in graph.subjects(rdflib.RDF.type, rdflib.OWL.ObjectProperty):
         object_properties.add(s)
 
-    # Extract data properties
     data_properties = set()
     for s in graph.subjects(rdflib.RDF.type, rdflib.OWL.DatatypeProperty):
         data_properties.add(s)
 
-    # Extract individuals
     individuals = set()
     for s in graph.subjects(rdflib.RDF.type, None):
         if (s, rdflib.RDF.type, rdflib.OWL.Class) not in graph and \
@@ -128,61 +125,57 @@ def extract_ontology_elements(file_content, file_format, prefixes):
     return classes, object_properties, data_properties, individuals, graph
 
 def get_label(uri):
-    """
-    Extract the label from the URI.
-    """
     return uri.split('#')[-1] if '#' in uri else uri.rsplit('/', 1)[-1]
 
 def generate_embeddings(ontology_elements):
-    """
-    Generate embeddings for ontology elements.
-    """
     labels = [get_label(str(e)) for e in ontology_elements]
     embeddings = embedding_model.encode(labels, convert_to_tensor=True, show_progress_bar=False)
     embeddings = embeddings.detach().cpu().numpy()
+
+    st.write("Sample Embeddings:")
+    for label, emb in zip(labels[:5], embeddings[:5]):
+        st.write(f"Label: {label}, Embedding (first 5 dims): {emb[:5]}...")
+    
     return labels, embeddings
 
 def build_vector_database(embeddings):
-    """
-    Build a FAISS GPU vector database from embeddings.
-    """
-    # Convert embeddings to float32 if not already
     embeddings = embeddings.astype('float32')
 
-    # Initialize GPU resources
     res = faiss.StandardGpuResources()
 
-    # Define the index
     dimension = embeddings.shape[1]
     flat_config = faiss.GpuIndexFlatConfig()
-    flat_config.device = 0  # GPU device id
+    flat_config.device = 0
 
-    # Build the index on GPU
     gpu_index = faiss.GpuIndexFlatL2(res, dimension, flat_config)
     gpu_index.add(embeddings)
+
+    num_vectors = gpu_index.ntotal
+    st.write(f"FAISS index has {num_vectors} vectors.")
+    logger.info(f"FAISS index has {num_vectors} vectors.")
+
     return gpu_index
 
 def search_relevant_elements(question, labels, index, ontology_elements, k=20):
-    """
-    Search for relevant ontology elements based on the question.
-    """
     question_embedding = embedding_model.encode([question], convert_to_tensor=True, show_progress_bar=False)
     question_embedding = question_embedding.detach().cpu().numpy().astype('float32')
 
     distances, indices = index.search(question_embedding, k)
     relevant_elements = [ontology_elements[idx] for idx in indices[0]]
+
+    st.write(f"Top {k} Relevant Elements:")
+    for i, elem in enumerate(relevant_elements):
+        st.write(f"{i+1}. {elem}")
+    logger.info(f"Top {k} relevant elements: {relevant_elements}")
+
     return relevant_elements
 
 def create_ontology_summary_from_elements(relevant_elements, graph, prefixes):
-    """
-    Create a concise summary of the relevant ontology elements to include in the prompt.
-    """
     def shorten_uri(uri):
         for prefix, namespace in prefixes.items():
             if uri.startswith(namespace):
                 local_part = uri.replace(namespace, '')
                 return f"{prefix}:{local_part}"
-        # Handle standard namespaces
         for prefix, namespace in STANDARD_PREFIXES.items():
             if uri.startswith(namespace):
                 local_part = uri.replace(namespace, '')
@@ -222,17 +215,10 @@ Individuals:
     return summary.strip()
 
 def generate_sparql_query(question, prefixes, ontology_summary):
-    """
-    Generate a SPARQL query from a natural language question using the LLM.
-    """
-    # Construct the PREFIX declarations
     prefix_declarations = '\n'.join([f"PREFIX {k}: <{v}>" for k, v in prefixes.items()])
     standard_prefixes = '\n'.join([f"PREFIX {k}: <{v}>" for k, v in STANDARD_PREFIXES.items()])
-
-    # Combine all prefixes
     all_prefixes = f"{standard_prefixes}\n{prefix_declarations}"
 
-    # Create the prompt with the ontology summary and explicit instructions
     prompt = f"""
 You are an expert in SPARQL and ontologies.
 
@@ -256,7 +242,6 @@ Question: "{question}"
 
 SPARQL Query:
 """
-    # Prepare the request payload for the LLM API
     payload = {
         "model": "mistral:7b",
         "prompt": prompt,
@@ -265,32 +250,36 @@ SPARQL Query:
 
     headers = {'Content-Type': 'application/json'}
 
-    response = requests.post(
-        f"{OLLAMA_SERVER_URL}/api/generate",
-        data=json.dumps(payload),
-        headers=headers
-    )
+    try:
+        response = requests.post(
+            f"{OLLAMA_SERVER_URL}/api/generate",
+            data=json.dumps(payload),
+            headers=headers,
+            timeout=30
+        )
 
-    if response.status_code != 200:
-        raise Exception(f"LLM API call failed: {response.text}")
+        if response.status_code != 200:
+            raise Exception(f"LLM API call failed: {response.status_code} {response.reason} {response.text}")
 
-    # Extract the generated text
-    result = response.json()
-    sparql_query = result.get('response', '')
+        result = response.json()
+        sparql_query = result.get('response', '')
 
-    if not any(keyword in sparql_query.lower() for keyword in ['select', 'ask', 'construct', 'describe']):
-        raise Exception("The LLM did not generate a valid SPARQL query. Please try rephrasing your question.")
+        if not any(keyword in sparql_query.lower() for keyword in ['select', 'ask', 'construct', 'describe']):
+            raise Exception("The LLM did not generate a valid SPARQL query. Please try rephrasing your question.")
 
-    return sparql_query.strip()
+        st.write("Generated SPARQL Query:")
+        st.code(sparql_query, language='sparql')
+        logger.info(f"Generated SPARQL Query: {sparql_query}")
+
+        return sparql_query.strip()
+
+    except requests.exceptions.Timeout:
+        raise Exception("LLM API call timed out. Please check your network connection or try again later.")
+    except requests.exceptions.RequestException as e:
+        raise Exception(f"LLM API call failed: {str(e)}")
 
 def post_process_sparql_query(sparql_query, prefixes):
-    """
-    Post-process the SPARQL query to fix prefixes and namespaces, and remove any extra text after the last closing brace.
-    """
-    # Combine custom and standard prefixes
     all_prefixes = {**STANDARD_PREFIXES, **prefixes}
-
-    # Parse existing PREFIX declarations in the generated query
     prefix_pattern = re.compile(r'PREFIX\s+(\w+):\s*<([^>]+)>', re.IGNORECASE)
     lines = sparql_query.strip().split('\n')
     query_lines = []
@@ -298,90 +287,95 @@ def post_process_sparql_query(sparql_query, prefixes):
         match = prefix_pattern.match(line.strip())
         if match:
             prefix, uri = match.groups()
-            # Replace with correct URI if prefix is known
             if prefix in all_prefixes:
                 correct_uri = all_prefixes[prefix]
                 line = f"PREFIX {prefix}: <{correct_uri}>"
             else:
-                # Remove unknown prefixes
                 continue
         query_lines.append(line)
 
-    # Remove any text after the last closing brace '}'
     query_body = '\n'.join(query_lines)
     last_closing_brace_index = query_body.rfind('}')
     if last_closing_brace_index != -1:
-        query_body = query_body[:last_closing_brace_index+1]  # Include the closing brace
+        query_body = query_body[:last_closing_brace_index+1]
 
-    # Reconstruct the PREFIX declarations
     prefix_declarations = '\n'.join([f"PREFIX {k}: <{v}>" for k, v in all_prefixes.items()])
-    # Ensure 'rdf' prefix is included
     if 'rdf' not in prefixes:
         prefix_declarations = f"PREFIX rdf: <{STANDARD_PREFIXES['rdf']}>\n{prefix_declarations}"
 
-    # Combine the correct PREFIX declarations with the query body
     corrected_query = f"{prefix_declarations}\n\n{query_body}"
+
+    st.write("Processed SPARQL Query:")
+    st.code(corrected_query, language='sparql')
+    logger.info(f"Processed SPARQL Query: {corrected_query}")
 
     return corrected_query.strip()
 
 def execute_sparql_query(sparql_query):
-    """
-    Execute the SPARQL query against the Fuseki server.
-    """
     headers = {'Content-Type': 'application/sparql-query', 'Accept': 'application/sparql-results+json'}
 
-    response = requests.post(
-        FUSEKI_QUERY_ENDPOINT,
-        data=sparql_query.encode('utf-8'),
-        headers=headers,
-        auth=HTTPBasicAuth(USERNAME, PASSWORD)
-    )
+    try:
+        response = requests.post(
+            FUSEKI_QUERY_ENDPOINT,
+            data=sparql_query.encode('utf-8'),
+            headers=headers,
+            auth=HTTPBasicAuth(USERNAME, PASSWORD),
+            timeout=30
+        )
 
-    if response.status_code != 200:
-        raise Exception(f"SPARQL query execution failed: {response.text}")
+        if response.status_code != 200:
+            raise Exception(f"SPARQL query execution failed: Status Code: {response.status_code}, Reason: {response.reason}, Response Text: {response.text}")
 
-    results = response.json()
-    return results
+        results = response.json()
+        logger.info("SPARQL query executed successfully.")
+        return results
+
+    except requests.exceptions.Timeout:
+        raise Exception("SPARQL query execution timed out. Please check your network connection or try again later.")
+    except requests.exceptions.RequestException as e:
+        raise Exception(f"SPARQL query execution failed: {str(e)}")
 
 def load_ontology_to_fuseki(file_content, file_format):
-    """
-    Load ontology into the Fuseki server.
-    """
     if file_format == 'xml':
         content_type = 'application/rdf+xml'
     elif file_format == 'turtle':
         content_type = 'text/turtle'
     else:
-        content_type = 'application/octet-stream'  # default
+        content_type = 'application/octet-stream'
 
     headers = {'Content-Type': content_type}
 
-    # Clear existing data
+    logger.info("Sending DROP ALL command to Fuseki.")
     clear_response = requests.post(
         FUSEKI_UPDATE_ENDPOINT,
         data="DROP ALL".encode('utf-8'),
         headers={'Content-Type': 'application/sparql-update'},
-        auth=HTTPBasicAuth(USERNAME, PASSWORD)
+        auth=HTTPBasicAuth(USERNAME, PASSWORD),
+        timeout=30
     )
 
     if clear_response.status_code not in [200, 204]:
         raise Exception(f"Failed to clear Fuseki dataset: Status Code: {clear_response.status_code}, Reason: {clear_response.reason}, Response Text: {clear_response.text}")
+    else:
+        logger.info(f"Fuseki dataset cleared successfully with status code: {clear_response.status_code}")
+        st.write(f"Fuseki dataset cleared successfully with status code: {clear_response.status_code}")
 
-    # Load new data
+    logger.info("Loading new ontology data into Fuseki.")
     response = requests.post(
         FUSEKI_DATA_ENDPOINT,
         data=file_content.encode('utf-8'),
         headers=headers,
-        auth=HTTPBasicAuth(USERNAME, PASSWORD)
+        auth=HTTPBasicAuth(USERNAME, PASSWORD),
+        timeout=60
     )
 
     if response.status_code not in (200, 201):
         raise Exception(f"Failed to load ontology into Fuseki: Status Code: {response.status_code}, Reason: {response.reason}, Response Text: {response.text}")
+    else:
+        logger.info(f"Ontology loaded into Fuseki successfully with status code: {response.status_code}")
+        st.write(f"Ontology loaded into Fuseki successfully with status code: {response.status_code}")
 
 def detect_file_format(file_name):
-    """
-    Detect the format of the ontology file based on its extension.
-    """
     if file_name.endswith('.ttl'):
         return 'turtle'
     elif file_name.endswith('.rdf') or file_name.endswith('.xml'):
@@ -389,12 +383,9 @@ def detect_file_format(file_name):
     elif file_name.endswith('.owl'):
         return 'xml'
     else:
-        return 'turtle'  # Default format
+        return 'turtle'
 
 def display_results(results):
-    """
-    Display SPARQL query results in Streamlit.
-    """
     if 'results' in results:
         headers = results['head']['vars']
         rows = results['results']['bindings']
@@ -408,67 +399,68 @@ def display_results(results):
     else:
         st.write("No results found.")
 
+def display_gpu_utilization():
+    if torch.cuda.is_available():
+        device = torch.cuda.current_device()
+        gpu_name = torch.cuda.get_device_name(device)
+        memory_allocated = torch.cuda.memory_allocated(device) / (1024 ** 3)
+        memory_reserved = torch.cuda.memory_reserved(device) / (1024 ** 3)
+        st.write(f"**GPU Name:** {gpu_name}")
+        st.write(f"**Memory Allocated:** {memory_allocated:.2f} GB")
+        st.write(f"**Memory Reserved:** {memory_reserved:.2f} GB")
+    else:
+        st.write("**No GPU available.**")
+
 def main():
     st.title("Ontology Question Answering System")
 
-    # Ontology Upload
+    display_gpu_utilization()
+
     uploaded_file = st.file_uploader("Upload your ontology file", type=['owl', 'rdf', 'ttl'])
     if uploaded_file is not None:
         file_content = uploaded_file.read().decode('utf-8')
         file_format = detect_file_format(uploaded_file.name)
 
         try:
-            # Extract prefixes
             prefixes = extract_prefixes(file_content, file_format)
             st.subheader("Extracted Prefixes and Namespaces")
             st.code('\n'.join([f"{k}: {v}" for k, v in prefixes.items()]))
 
-            # Extract ontology elements
             classes, object_properties, data_properties, individuals, graph = extract_ontology_elements(file_content, file_format, prefixes)
             ontology_elements = list(classes) + list(object_properties) + list(data_properties) + list(individuals)
+            st.write(f"Extracted {len(ontology_elements)} ontology elements.")
 
-            # Generate embeddings for ontology elements
-            labels, embeddings = generate_embeddings(ontology_elements)
+            with st.spinner("Generating embeddings..."):
+                labels, embeddings = generate_embeddings(ontology_elements)
+            st.success("Embeddings generated successfully.")
 
-            # Build the vector database
             index = build_vector_database(embeddings)
+            st.success("FAISS index built successfully.")
 
-            # Load into Fuseki
             with st.spinner("Loading ontology into Fuseki..."):
                 load_ontology_to_fuseki(file_content, file_format)
             st.success("Ontology loaded into Fuseki successfully.")
 
-            # Question Input
             question = st.text_input("Ask a question about the ontology:")
             if question:
-                # Search for relevant ontology elements
-                relevant_elements = search_relevant_elements(question, labels, index, ontology_elements)
+                with st.spinner("Searching for relevant ontology elements..."):
+                    relevant_elements = search_relevant_elements(question, labels, index, ontology_elements)
 
-                # Create ontology summary from relevant elements
                 ontology_summary = create_ontology_summary_from_elements(relevant_elements, graph, prefixes)
                 st.subheader("Ontology Summary")
                 st.text(ontology_summary)
 
-                # Generate SPARQL query
                 with st.spinner("Generating SPARQL query..."):
                     sparql_query = generate_sparql_query(question, prefixes, ontology_summary)
-                    st.subheader("Generated SPARQL Query (Raw Output)")
-                    st.code(sparql_query, language='sparql')
 
-                    # Post-process the SPARQL query
                     sparql_query = post_process_sparql_query(sparql_query, prefixes)
 
-                st.subheader("Processed SPARQL Query")
-                st.code(sparql_query, language='sparql')
-
-                # Validate SPARQL syntax
                 try:
                     prepareQuery(sparql_query)
                 except Exception as e:
                     st.error(f"Invalid SPARQL query syntax: {str(e)}")
                     return
 
-                # Execute SPARQL query
                 try:
                     with st.spinner("Executing SPARQL query..."):
                         results = execute_sparql_query(sparql_query)
