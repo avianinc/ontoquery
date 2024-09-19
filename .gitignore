@@ -1,4 +1,48 @@
-/.venv
-/.protegedata
-/fuseki_data/*
-/data/*
+# Python-related
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+
+# Virtual environments
+.venv/
+env/
+ENV/
+venv/
+ENV.bak/
+env.bak/
+
+# Fuseki data
+fuseki_data/
+
+# Data folders
+data/
+cache/
+
+# Protege-related data
+.protegedata/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# macOS metadata
+.DS_Store
+
+# Log files
+*.log
+*.out
+*.err
+
+# VS Code workspace settings
+.vscode/
+
+# Python bytecode
+*.pyc
+
+# Docker
+docker-compose.override.yml
+
+# Widoco generated docs
+data/target/generated-doc/
