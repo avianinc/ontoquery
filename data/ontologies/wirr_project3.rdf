@@ -30,12 +30,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#designedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#designedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasAirVehicle">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Package"/>
     </owl:ObjectProperty>
     
 
@@ -44,7 +51,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#hasPackage">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission"/>
     </owl:ObjectProperty>
     
 
@@ -80,14 +86,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDesignedBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#isDesignedBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -426,9 +424,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ -->
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensorXYZ">
+    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ActiveSensor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Sensor"/>
     </owl:Class>
     
@@ -446,14 +444,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Attack">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Bomb -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Bomb">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"/>
     </owl:Class>
     
 
@@ -534,18 +524,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#DurationTime -->
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Fire -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#DurationTime">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#EndTIme -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#EndTIme">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Fire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"/>
     </owl:Class>
     
 
@@ -553,14 +535,6 @@
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function"/>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gun -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gun">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"/>
-    </owl:Class>
     
 
 
@@ -591,14 +565,6 @@
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Land -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Land">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Launch -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Launch">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"/>
     </owl:Class>
     
@@ -648,39 +614,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Mission"/>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissionModel -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissionModel">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model"/>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction"/>
-    </owl:Class>
     
 
 
@@ -689,12 +625,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Notify">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Action"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Package -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Package"/>
     
 
 
@@ -715,14 +645,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PerformanceModel -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#PerformanceModel">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Platform">
@@ -736,20 +658,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Function"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ReliabilityModel -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ReliabilityModel">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Requirement -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Requirement"/>
     
 
 
@@ -772,22 +680,6 @@
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Specification -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Specification"/>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#StartTime -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#StartTime">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SustaimmentModel -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SustaimmentModel">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Model"/>
-    </owl:Class>
     
 
 
@@ -829,8 +721,30 @@
 
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon">
-        <rdfs:comment>This is a weapon :)</rdfs:comment>
+    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Weapon"/>
+    
+
+
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#durationTime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#durationTime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#endTIme -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#endTIme">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#startTime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#startTime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Time"/>
     </owl:Class>
     
 
@@ -846,92 +760,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle"/>
-        <untitled-ontology-47:hasPayload rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1"/>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5000</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AV2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#AirVehicle"/>
-        <untitled-ontology-47:hasPayload rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1"/>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4500</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot">
-        <untitled-ontology-47:isDefinedBy rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"/>
-        <untitled-ontology-47:cost rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1500</untitled-ontology-47:cost>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#NormalDistribution"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#ProbilityDensityFunction"/>
         <untitled-ontology-47:mean rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-47:mean>
         <untitled-ontology-47:variance rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</untitled-ontology-47:variance>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Gunner">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"/>
-        <untitled-ontology-47:isDefinedBy rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"/>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MedicalAttendant">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"/>
-        <untitled-ontology-47:isDefinedBy rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"/>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"/>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">280</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Missile"/>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">666</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Payload"/>
-        <untitled-ontology-47:contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CoPilot"/>
-        <untitled-ontology-47:contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileA"/>
-        <untitled-ontology-47:contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#MissileB"/>
-        <untitled-ontology-47:contains rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot"/>
     </owl:NamedIndividual>
     
 
@@ -939,26 +773,6 @@
     <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Pilot">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"/>
-        <untitled-ontology-47:isDefinedBy rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"/>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#SensorOperator">
-        <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"/>
-        <untitled-ontology-47:isDefinedBy rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"/>
-        <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-47:mass>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#Swimmer">
         <rdf:type rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMember"/>
         <untitled-ontology-47:isDefinedBy rdf:resource="http://www.semanticweb.org/johndehart/ontologies/2024/8/untitled-ontology-47#CrewMass_NormalDistrbution"/>
         <untitled-ontology-47:mass rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-47:mass>

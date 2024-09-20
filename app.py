@@ -12,6 +12,9 @@ import re
 import logging
 import torch
 
+# Set the page configuration
+st.set_page_config(layout="wide")
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -250,6 +253,7 @@ SPARQL Query:
     # Prepare the request payload for the LLM API
     payload = {
         "model": "mistral:7b",
+        #"model": "codegemma",
         "prompt": prompt,
         "stream": False,
     }
@@ -514,6 +518,18 @@ def main():
                     st.error(f"Failed to execute SPARQL query: {str(e)}")
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
+
+import streamlit as st
+
+# Sidebar with an expanded area for URLs
+with st.sidebar:
+    st.header("System Information")
+    
+    with st.expander("Expand to view URLs"):
+        st.markdown("[Conceptual Data Model](http://192.168.86.100:8080/index-en.html)")
+        st.markdown("[RDF Server](http://192.168.86.100:3030/#/dataset/ds/query)")
+        st.markdown("[Protege Modeler](http://192.168.86.100:5000/)")
+        st.markdown("[Model Server](http://192.168.86.100:11434/v1/models)")
 
 if __name__ == "__main__":
     main()
