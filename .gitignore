@@ -1,4 +1,5 @@
 /.venv
 /.protegedata
-/.cache
+/cache
+/data
 /fuseki_data
